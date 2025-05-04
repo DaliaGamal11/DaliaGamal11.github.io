@@ -61,23 +61,19 @@ nav ul li a:hover {
     }
    
 .page-title {
-  text-align: center;
-  margin: 2rem 0;
-}
-
-.page-title h1 {
-  font-family: 'Caveat', cursive;
-  font-size: 3rem;
-  color: #6a1b9a;
-  margin: 0;
-  display: inline-block;
-}
-
-.page-title .icon {
-  font-size: 2.5rem;
-  transform: rotate(-10deg);
-  display: inline-block;
-}
+      text-align: center;
+      font-family: 'Caveat', cursive;
+      font-size: 3rem;
+      color: #6a1b9a;
+      margin: 2rem 0;
+      position: relative;
+    }
+    .page-title::after {
+      content: "✏️";
+      position: absolute;
+      right: 30%;
+      top: -15px;
+    }
 
 
 
@@ -165,12 +161,8 @@ nav ul li a:hover {
     </nav>
   </header>
 
-<div class="page-title">
-  <h1>My Projects <span class="icon">✏️</span></h1>
-</div>
 
-
-
+   <h2 class="page-title">My Projects</h2>
 
   <div class="projects-container">
     <article class="project-card">
