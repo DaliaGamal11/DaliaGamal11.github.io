@@ -1,1 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dalia's Volunteering</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* نفس الـStyling الأساسي */
+    .volunteering-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+    }
+    .timeline {
+      position: relative;
+      padding-left: 50px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 25px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #e1bee7, #f8bbd0);
+    }
+    .volunteer-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+      padding: 1.5rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    }
+    .volunteer-item::before {
+      content: '';
+      position: absolute;
+      left: -40px;
+      top: 20px;
+      width: 30px;
+      height: 30px;
+      background: #e1bee7;
+      border-radius: 50%;
+      border: 3px solid white;
+    }
+    .volunteer-item h3 {
+      font-family: 'Caveat', cursive;
+      font-size: 1.8rem;
+      color: #7b1fa2;
+      margin-bottom: 0.3rem;
+    }
+    .role {
+      font-weight: bold;
+      color: #6a1b9a;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+      padding: 0.2rem 0.8rem;
+      background: #f3e5f5;
+      border-radius: 15px;
+    }
+    .organization {
+      font-style: italic;
+      color: #888;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Dalia Gamal</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="volunteering.html">Volunteering</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <h2 class="page-title">Volunteering Journey</h2>
+
+  <div class="volunteering-container">
+    <div class="timeline">
+      <article class="volunteer-item">
+        <span class="role">President</span>
+        <h3>ELDER</h3>
+        <p>Led the student organization and managed all activities and events.</p>
+      </article>
+      
+      <article class="volunteer-item">
+        <span class="role">Head of HR</span>
+        <h3>SPE - Society of Petroleum Engineers</h3>
+        <p>Managed human resources activities and member engagement.</p>
+      </article>
+      
+      <article class="volunteer-item">
+        <span class="role">Head of Organizing</span>
+        <h3>Minders</h3>
+        <p>Organized technical events and workshops for the community.</p>
+      </article>
+      
+      <article class="volunteer-item">
+        <span class="role">Backend Volunteer</span>
+        <h3>Minders</h3>
+        <p>Developed scalable APIs and backend services for community platforms.</p>
+      </article>
+      
+      <article class="volunteer-item">
+        <span class="role">Volunteer</span>
+        <h3>Resala Charity</h3>
+        <p>Participated in various charity activities and community service.</p>
+      </article>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Dalia Gamal | daliagamal112024@gmail.com | +20 1272199965</p>
+  </footer>
+</body>
+</html>
