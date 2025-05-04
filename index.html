@@ -1,383 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dalia Gamal | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Quicksand', sans-serif;
-      background: #fdf6f0 url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-      color: #3c2a21;
-      line-height: 1.6;
-      padding-bottom: 2rem;
-    }
-    header {
-      background-color: #e0bbec;
-      padding: 1rem 2rem;
-      border-bottom: 3px dashed #b185db;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    nav h1 {
-      font-family: 'Caveat', cursive;
-      font-size: 2.5rem;
-      color: #4a148c;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.2rem;
-    }
-    nav ul li a {
-      text-decoration: none;
-      color: #4a148c;
-      font-weight: bold;
-      border-bottom: 2px solid transparent;
-      transition: 0.3s;
-    }
-    nav ul li a:hover {
-      border-color: #b185db;
-    }
-    .hero {
-      text-align: center;
-      padding: 4rem 2rem;
-      background: linear-gradient(45deg, #f8bbd0, #e1bee7);
-      border-radius: 0 0 30px 30px;
-      margin-bottom: 2rem;
-      position: relative;
-    }
-    .hero::after {
-      content: "✨";
-      position: absolute;
-      right: 30px;
-      top: 20px;
-      font-size: 2rem;
-    }
-    .hero h2 {
-      font-family: 'Caveat', cursive;
-      font-size: 3rem;
-      color: #6a1b9a;
-      margin-bottom: 0.5rem;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      color: #5e4b56;
-    }
-    .section {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      position: relative;
-    }
-    .section::before {
-      content: "";
-      position: absolute;
-      left: -15px;
-      top: -15px;
-      width: 50px;
-      height: 50px;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23e1bee7"><path d="M12 2L4 12l8 10 8-10z"/></svg>') no-repeat;
-      opacity: 0.7;
-    }
-    .section h2 {
-      font-family: 'Caveat', cursive;
-      font-size: 2.2rem;
-      margin-bottom: 1.5rem;
-      color: #7b1fa2;
-      border-bottom: 2px dashed #e1bee7;
-      padding-bottom: 0.5rem;
-    }
-    .experience-item {
-      margin-bottom: 2rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid #f3e5f5;
-    }
-    .experience-item:last-child {
-      border-bottom: none;
-    }
-    .job-title {
-      font-weight: bold;
-      color: #6a1b9a;
-      font-size: 1.2rem;
-      margin-bottom: 0.3rem;
-    }
-    .company {
-      font-style: italic;
-      color: #888;
-      display: inline-block;
-      margin-right: 1rem;
-    }
-    .date {
-      color: #b185db;
-      font-weight: bold;
-    }
-    .responsibilities {
-      margin-top: 1rem;
-      padding-left: 1.5rem;
-    }
-    .responsibilities li {
-      margin-bottom: 0.5rem;
-      list-style-type: circle;
-    }
-    .highlights {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin: 2rem 0;
-    }
-    .highlight-card {
-      background: #f9f0ff;
-      padding: 1.5rem;
-      border-radius: 10px;
-      border-left: 4px solid #b185db;
-    }
-    .highlight-card h3 {
-      font-family: 'Caveat', cursive;
-      color: #6a1b9a;
-      margin-bottom: 0.5rem;
-      font-size: 1.5rem;
-    }
-    .certifications {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    .cert-card {
-      background: #f9f0ff;
-      padding: 1.5rem;
-      border-radius: 10px;
-      border-top: 3px solid #b185db;
-    }
-    .skills-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-    .skill-category {
-      background: white;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-    .skill-category h4 {
-      color: #6a1b9a;
-      margin-bottom: 0.5rem;
-      font-size: 1.1rem;
-    }
-    .skill-item {
-      display: flex;
-      align-items: center;
-      margin-bottom: 0.3rem;
-    }
-    .skill-item::before {
-      content: "•";
-      color: #b185db;
-      margin-right: 0.5rem;
-    }
-    footer {
-      text-align: center;
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: #888;
-    }
-    .signature {
-      font-family: 'Caveat', cursive;
-      font-size: 1.8rem;
-      color: #7b1fa2;
-      text-align: right;
-      margin-top: 1rem;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dalia Gamal | Software Engineer & Business Analyst</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <h1>Dalia Gamal</h1>
-      <ul>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Dalia Gamal</a>
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="volunteering.html">Volunteering</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-    </nav>
-  </header>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
 
+  <!-- Hero Section -->
   <section class="hero">
-    <h2>Hi, I'm Dalia 👩‍💻</h2>
-    <p>Software Engineer | Technical Talant Aquestion Specialist  | Business Analysis & RPA Specialist</p>
-  </section>
-
-  <section class="section">
-    <h2>Professional Experience</h2>
-    
-    <div class="experience-item">
-      <div class="job-title">Business Analysis and RPA Trainee (iti)</div>
-      <div>
-        <span class="company">Information Technology Institute (ITI)</span>
-        <span class="date">03/2025 – Present</span>
+    <div class="container">
+      <div class="hero-content">
+        <h1>Dalia Gamal</h1>
+        <h2>Software Engineer & Business Analyst</h2>
+        <p>Computer Science graduate specializing in full-stack development, business analysis, and RPA solutions.</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">Contact Me</a>
+          <a href="projects.html" class="btn btn-secondary">View Projects</a>
+        </div>
       </div>
-      <ul class="responsibilities">
-        <li>Participating in intensive training program focusing on Business Analysis and Robotic Process Automation</li>
-        <li>Developing skills in requirement gathering and workflow optimization</li>
-        <li>Delivering automation solutions using industry-standard tools</li>
-      </ul>
-    </div>
-    
-    <div class="experience-item">
-      <div class="job-title">Technical Talent Acquisition Specialist</div>
-      <div>
-        <span class="company">Amit Learning</span>
-        <span class="date">08/2024 – 01/2025</span>
-      </div>
-      <ul class="responsibilities">
-        <li>Conducted technical sourcing and screening for software engineering roles</li>
-        <li>Built strong understanding of IT technical stacks and job requirements</li>
-        <li>Applied recruitment best practices for technical positions</li>
-      </ul>
-    </div>
-    
-    <div class="experience-item">
-      <div class="job-title">Backend Volunteer</div>
-      <div>
-        <span class="company">Minders</span>
-        <span class="date">02/2023 – 08/2023</span>
-      </div>
-      <ul class="responsibilities">
-        <li>Developed scalable APIs and backend services for business platforms</li>
-        <li>Participated in agile team ceremonies and code reviews</li>
-      </ul>
-    </div>
-    
-    <div class="experience-item">
-      <div class="job-title">Automation Engineer Intern</div>
-      <div>
-        <span class="company">First Gulf Solutions</span>
-        <span class="date">08/2022 – 09/2022</span>
-      </div>
-      <ul class="responsibilities">
-        <li>Assisted in automating backend processes for enterprise applications</li>
-        <li>Supported digital transformation initiatives through system integration</li>
-      </ul>
-    </div>
-    
-    <div class="experience-item">
-      <div class="job-title">Agile & ISTQB Trainee</div>
-      <div>
-        <span class="company">Orange Digital Center</span>
-        <span class="date">10/2022</span>
-      </div>
-      <ul class="responsibilities">
-        <li>Completed intensive training in Agile methodologies and software testing</li>
-        <li>Participated in real-world project simulations</li>
-        <li>Gained SFPC (Scrum Foundation Professional Certificate)</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>Technical Skills</h2>
-    
-    <div class="skills-container">
-      <div class="skill-category">
-        <h4>Programming Languages</h4>
-        <div class="skill-item">C++</div>
-        <div class="skill-item">Python</div>
-        <div class="skill-item">Java</div>
-        <div class="skill-item">C#</div>
-      </div>
-      
-      <div class="skill-category">
-        <h4>Web Development</h4>
-        <div class="skill-item">HTML/CSS</div>
-        <div class="skill-item">JavaScript</div>
-        <div class="skill-item">Flutter</div>
-      </div>
-      
-      <div class="skill-category">
-        <h4>Databases</h4>
-        <div class="skill-item">SQL Server</div>
-        <div class="skill-item">Firebase</div>
-      </div>
-      
-      <div class="skill-category">
-        <h4>Frameworks & Tools</h4>
-        <div class="skill-item">LINQ</div>
-        <div class="skill-item">Entity Framework</div>
-        <div class="skill-item">Git</div>
-        <div class="skill-item">Jira</div>
-      </div>
-      
-      <div class="skill-category">
-        <h4>Concepts</h4>
-        <div class="skill-item">OOP</div>
-        <div class="skill-item">Agile</div>
-        <div class="skill-item">Design Patterns</div>
-        <div class="skill-item">SOLID Principles</div>
+      <div class="hero-image">
+        <img src="assets/images/profile.jpg" alt="Dalia Gamal">
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <h2>Certifications</h2>
-    
-    <div class="certifications">
-      <div class="cert-card">
-        <h3>Scrum Foundation Professional Certificate</h3>
-        <p>Orange Digital Center • 2022</p>
-      </div>
+  <!-- Experience Section -->
+  <section id="experience" class="section experience-section">
+    <div class="container">
+      <h2 class="section-title">Professional Experience</h2>
       
-      <div class="cert-card">
-        <h3>Red Hat System Administration</h3>
-        <p>Red Hat • 2023</p>
-      </div>
-      
-      <div class="cert-card">
-        <h3>Introduction to Software Engineering</h3>
-        <p>IBM • 2024</p>
+      <div class="timeline">
+        <!-- ITI Experience -->
+        <div class="timeline-item">
+          <div class="timeline-img">
+            <img src="assets/images/iti-logo.png" alt="ITI">
+          </div>
+          <div class="timeline-content">
+            <h3>Business Analysis and RPA Trainee</h3>
+            <h4>Information Technology Institute (ITI)</h4>
+            <div class="date">March 2025 - Present</div>
+            <ul>
+              <li>Participating in intensive training program focusing on Business Analysis and Robotic Process Automation</li>
+              <li>Developing skills in requirement gathering, process modeling, and workflow optimization</li>
+              <li>Implementing automation solutions using UiPath and other RPA tools</li>
+              <li>Creating business requirement documents and functional specifications</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Amit Learning Experience -->
+        <div class="timeline-item">
+          <div class="timeline-img">
+            <img src="assets/images/amit-logo.png" alt="Amit Learning">
+          </div>
+          <div class="timeline-content">
+            <h3>Technical Talent Acquisition Specialist</h3>
+            <h4>Amit Learning</h4>
+            <div class="date">August 2024 - January 2025</div>
+            <ul>
+              <li>Sourced and screened candidates for technical roles including software developers, QA engineers, and DevOps specialists</li>
+              <li>Conducted technical interviews and assessments for IT positions</li>
+              <li>Built and maintained a pipeline of qualified technical candidates</li>
+              <li>Collaborated with hiring managers to understand technical requirements</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Minders Experience -->
+        <div class="timeline-item">
+          <div class="timeline-img">
+            <img src="assets/images/minders-logo.png" alt="Minders">
+          </div>
+          <div class="timeline-content">
+            <h3>Backend Developer Volunteer</h3>
+            <h4>Minders</h4>
+            <div class="date">February 2023 - August 2023</div>
+            <ul>
+              <li>Developed RESTful APIs using Node.js and Express</li>
+              <li>Implemented database schemas and queries for MongoDB</li>
+              <li>Participated in code reviews and agile ceremonies</li>
+              <li>Contributed to the development of mental health platform features</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <h2>My Professional Profile</h2>
-    <p>
-      Computer Science graduate from Cairo University with expertise in software engineering and business analysis. 
-      Passionate about creating solutions that blend technical excellence with user-centric design.
-    </p>
-    
-    <div class="highlights">
-      <div class="highlight-card">
-        <h3>Education</h3>
-        <p>B.Sc. in Computer Science & AI - Cairo University (2020-2024)</p>
-      </div>
+  <!-- Skills Section -->
+  <section id="skills" class="section skills-section">
+    <div class="container">
+      <h2 class="section-title">Technical Skills</h2>
       
-      <div class="highlight-card">
-        <h3>Languages</h3>
-        <p>Arabic (Native), English (Professional)</p>
+      <div class="skills-grid">
+        <!-- Programming Languages -->
+        <div class="skill-category">
+          <h3><i class="fas fa-code"></i> Programming Languages</h3>
+          <div class="skill-bars">
+            <div class="skill">
+              <span class="skill-name">Python</span>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <span class="skill-name">C++</span>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <span class="skill-name">Java</span>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 75%"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <span class="skill-name">C#</span>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 70%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Web Development -->
+        <div class="skill-category">
+          <h3><i class="fas fa-globe"></i> Web Development</h3>
+          <div class="skill-bars">
+            <div class="skill">
+              <span class="skill-name">HTML/CSS</span>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <span class="skill-name">JavaScript</span>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <span class="skill-name">Flutter</span>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 75%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Databases -->
+        <div class="skill-category">
+          <h3><i class="fas fa-database"></i> Databases</h3>
+          <div class="skill-bars">
+            <div class="skill">
+              <span class="skill-name">SQL Server</span>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <span class="skill-name">Firebase</span>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 75%"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <span class="skill-name">MongoDB</span>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 70%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Tools & Frameworks -->
+        <div class="skill-category">
+          <h3><i class="fas fa-tools"></i> Tools & Frameworks</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">LINQ</span>
+            <span class="skill-tag">Entity Framework</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">Jira</span>
+            <span class="skill-tag">UiPath</span>
+            <span class="skill-tag">Agile</span>
+            <span class="skill-tag">Scrum</span>
+          </div>
+        </div>
       </div>
     </div>
-    
-    <p class="signature">Dalia Gamal</p>
   </section>
 
+  <!-- Education Section -->
+  <section class="section education-section">
+    <div class="container">
+      <h2 class="section-title">Education & Certifications</h2>
+      
+      <div class="education-grid">
+        <div class="education-card">
+          <div class="education-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3>B.Sc. in Computer Science & AI</h3>
+          <h4>Cairo University</h4>
+          <div class="date">2020 - 2024</div>
+          <p>Graduated with honors. Specialized in software engineering and artificial intelligence fundamentals.</p>
+        </div>
+        
+        <div class="education-card">
+          <div class="education-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <h3>Scrum Foundation Professional Certificate</h3>
+          <h4>Orange Digital Center</h4>
+          <div class="date">2022</div>
+          <p>Certified in Agile methodologies and Scrum framework for software development.</p>
+        </div>
+        
+        <div class="education-card">
+          <div class="education-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <h3>Red Hat System Administration</h3>
+          <h4>Red Hat</h4>
+          <div class="date">2023</div>
+          <p>Certified in Linux system administration and Red Hat technologies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+          <p><i class="fas fa-envelope"></i> daliagamal112024@gmail.com</p>
+          <p><i class="fas fa-phone"></i> +20 1272199965</p>
+          <p><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</p>
+          
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/dalia-gamal" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/daliagamal" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        
+        <div class="contact-form">
+          <form action="#" method="POST">
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <input type="text" name="subject" placeholder="Subject" required>
+            </div>
+            <div class="form-group">
+              <textarea name="message" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Dalia Gamal | daliagamal112024@gmail.com | +20 1272199965</p>
+    <div class="container">
+      <p>&copy; 2025 Dalia Gamal. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
   </footer>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
