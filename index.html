@@ -4,25 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dalia Gamal | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
     }
     body {
-      background: linear-gradient(to right, #f7f8fc, #e0eafc);
-      color: #333;
+      font-family: 'Quicksand', sans-serif;
+      background: #fdf6f0 url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      color: #3c2a21;
       line-height: 1.6;
+      padding-bottom: 2rem;
     }
     header {
-      background-color: #3a0ca3;
-      color: white;
+      background-color: #e0bbec;
       padding: 1rem 2rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      border-bottom: 3px dashed #b185db;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     nav {
       display: flex;
@@ -30,58 +30,64 @@
       align-items: center;
     }
     nav h1 {
-      font-size: 1.8rem;
-      font-weight: 600;
+      font-family: 'Caveat', cursive;
+      font-size: 2.5rem;
+      color: #4a148c;
     }
     nav ul {
-      display: flex;
       list-style: none;
-    }
-    nav ul li {
-      margin-left: 1.5rem;
+      display: flex;
+      gap: 1.2rem;
     }
     nav ul li a {
-      color: white;
       text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
+      color: #4a148c;
+      font-weight: bold;
+      border-bottom: 2px solid transparent;
+      transition: 0.3s;
     }
     nav ul li a:hover {
-      color: #fcd5ce;
+      border-color: #b185db;
     }
     .hero {
       text-align: center;
       padding: 4rem 2rem;
-      background: linear-gradient(to right, #b5179e, #7209b7);
-      color: white;
+      background-color: #ffe0f0;
     }
     .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+      font-family: 'Caveat', cursive;
+      font-size: 3rem;
+      color: #6a1b9a;
+      margin-bottom: 0.5rem;
     }
     .hero p {
       font-size: 1.2rem;
+      color: #5e4b56;
     }
     .about {
       padding: 3rem 2rem;
       max-width: 800px;
       margin: auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      margin-top: 2rem;
     }
     .about h2 {
-      font-size: 2rem;
+      font-family: 'Caveat', cursive;
+      font-size: 2.2rem;
       margin-bottom: 1rem;
-      color: #3a0ca3;
+      color: #7b1fa2;
     }
     .about p {
-      margin-bottom: 1rem;
       font-size: 1.1rem;
+      margin-bottom: 1rem;
     }
     footer {
-      background-color: #3a0ca3;
-      color: white;
       text-align: center;
-      padding: 1rem 0;
-      margin-top: 2rem;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #888;
     }
   </style>
 </head>
@@ -104,12 +110,12 @@
   </section>
 
   <section class="about">
-    <h2>About Me</h2>
+    <h2>My Story</h2>
     <p>
-      I'm a detail-oriented and highly motivated software engineer with a strong background in Full Stack Development and Robotic Process Automation. I enjoy solving problems, building efficient systems, and working on real-world impactful projects.
+      I'm Dalia, a detail-loving software engineer who enjoys making tech feel human. I blend creativity and code to build apps that solve problems and spark smiles.
     </p>
     <p>
-      I’m currently training in Business Analysis and always looking for opportunities to grow and collaborate.
+      With a passion for continuous learning, I’ve explored full-stack development, RPA, and even dipped my toes into business analysis. Every new project is a blank notebook page — and I love writing something meaningful on it.
     </p>
   </section>
 
