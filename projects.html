@@ -1,1 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dalia's Projects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* نفس الـStyling الأساسي من الـIndex */
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: #fdf6f0 url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      color: #3c2a21;
+      line-height: 1.6;
+      padding-bottom: 2rem;
+    }
+    header {
+      background-color: #e0bbec;
+      padding: 1rem 2rem;
+      border-bottom: 3px dashed #b185db;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav h1 {
+      font-family: 'Caveat', cursive;
+      font-size: 2.5rem;
+      color: #4a148c;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.2rem;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #4a148c;
+      font-weight: bold;
+      border-bottom: 2px solid transparent;
+      transition: 0.3s;
+    }
+    nav ul li a:hover {
+      border-color: #b185db;
+    }
+    .page-title {
+      text-align: center;
+      font-family: 'Caveat', cursive;
+      font-size: 3rem;
+      color: #6a1b9a;
+      margin: 2rem 0;
+      position: relative;
+    }
+    .page-title::after {
+      content: "✏️";
+      position: absolute;
+      right: 30%;
+      top: -15px;
+    }
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+      padding: 0 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .project-card {
+      background: white;
+      border-radius: 15px;
+      padding: 1.5rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-top: 5px solid #e1bee7;
+      transition: transform 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    .project-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #e1bee7, #f8bbd0);
+    }
+    .project-card h3 {
+      font-family: 'Caveat', cursive;
+      font-size: 1.8rem;
+      color: #7b1fa2;
+      margin-bottom: 0.5rem;
+    }
+    .project-card p {
+      margin-bottom: 1rem;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+    .tag {
+      background: #f3e5f5;
+      color: #6a1b9a;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+    }
+    .github-link {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #6a1b9a;
+      text-decoration: none;
+      font-weight: bold;
+      border-bottom: 1px dashed #b185db;
+    }
+    .github-link:hover {
+      color: #4a148c;
+    }
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Dalia Gamal</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="volunteering.html">Volunteering</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <h2 class="page-title">My Projects</h2>
+
+  <div class="projects-container">
+    <article class="project-card">
+      <h3>Sherophobia</h3>
+      <p>Mental health platform for booking therapy sessions and accessing resources with 24/7 chat support.</p>
+      <div class="tags">
+        <span class="tag">Full Stack</span>
+        <span class="tag">Healthcare</span>
+        <span class="tag">Schedule Mgmt</span>
+      </div>
+      <a href="https://github.com/DaliaGamall1/Sherophobia" class="github-link">View on GitHub →</a>
+    </article>
+    
+    <article class="project-card">
+      <h3>Home Loans ML</h3>
+      <p>Machine learning model to automate eligibility decisions for home loan applications.</p>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">ML</span>
+        <span class="tag">Decision Trees</span>
+      </div>
+      <a href="https://github.com/DaliaGamall1/Home_Loans" class="github-link">View on GitHub →</a>
+    </article>
+    
+    <article class="project-card">
+      <h3>El-Akeel</h3>
+      <p>Multi-channel food ordering platform with Bank Misr payment integration.</p>
+      <div class="tags">
+        <span class="tag">E-Commerce</span>
+        <span class="tag">Payment Gateway</span>
+        <span class="tag">Order Tracking</span>
+      </div>
+      <a href="https://github.com/DaliaGamall1/EIAkeel" class="github-link">View on GitHub →</a>
+    </article>
+    
+    <article class="project-card">
+      <h3>Connect4 AI</h3>
+      <p>Game agent using Minimax and Alpha-Beta pruning algorithms for competitive gameplay.</p>
+      <div class="tags">
+        <span class="tag">AI</span>
+        <span class="tag">Algorithms</span>
+        <span class="tag">Game Dev</span>
+      </div>
+      <a href="https://github.com/DaliaGamall1/connect4_tictactoe" class="github-link">View on GitHub →</a>
+    </article>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Dalia Gamal | daliagamal112024@gmail.com | +20 1272199965</p>
+  </footer>
+</body>
+</html>
