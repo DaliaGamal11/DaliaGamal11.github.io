@@ -31,6 +31,5 @@ Explore my [projects page](projects.html) to see my work in:
 
 ## 📫 Contact
 - Email: daliagamal112024@gmail.com
-- Phone: +20 1272199965
-- LinkedIn: [Your LinkedIn Profile]
-- GitHub: [Your GitHub Profile]
+- LinkedIn: (https://www.linkedin.com/in/dalia-gamal-a95092232/)
+- GitHub: (https://github.com/DaliaGamal11)
