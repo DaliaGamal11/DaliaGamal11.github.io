@@ -59,12 +59,18 @@ nav ul li a:hover {
 }
 
     }
-    .page-title {
+   
+
+.page-title-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
+  justify-content: center; 
   margin: 2rem 0;
+}
+
+.page-title {
+  display: flex;
+  align-items: center; 
+  gap: 0.5rem;
 }
 
 .page-title h1 {
@@ -78,6 +84,7 @@ nav ul li a:hover {
   font-size: 2.5rem;
   transform: rotate(-10deg);
 }
+
 
     .projects-container {
       display: grid;
@@ -163,10 +170,13 @@ nav ul li a:hover {
     </nav>
   </header>
 
- <div class="page-title">
-  <h1>My Projects</h1>
-  <span class="icon">✏️</span>
+ <div class="page-title-container">
+  <div class="page-title">
+    <h1>My Projects</h1>
+    <span class="icon">✏️</span>
+  </div>
 </div>
+
 
 
   <div class="projects-container">
