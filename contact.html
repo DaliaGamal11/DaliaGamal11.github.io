@@ -6,11 +6,62 @@
   <title>Contact Dalia</title>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <style>
-   nav ul li a.active {
-  border-bottom: 2px solid #b185db;
-  color: #4a148c;
-  font-weight: bold;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: #fdf6f0 url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      color: #3c2a21;
+      line-height: 1.6;
+      padding-bottom: 2rem;
+    }
+    header {
+      background-color: #e0bbec;
+      padding: 1rem 2rem;
+      border-bottom: 3px dashed #b185db;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav h1 {
+      font-family: 'Caveat', cursive;
+      font-size: 2.5rem;
+      color: #4a148c;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.2rem;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #4a148c;
+      font-weight: bold;
+      border-bottom: 2px solid transparent;
+      transition: 0.3s;
+    }
+    nav ul li a:hover {
+      border-color: #b185db;
+    }
+    nav ul li a.active {
+      border-bottom: 2px solid #b185db;
+      color: #4a148c;
+      font-weight: bold;
+    }
+    .page-title {
+      text-align: center;
+      font-family: 'Caveat', cursive;
+      font-size: 3rem;
+      color: #6a1b9a;
+      margin: 2rem 0;
+      position: relative;
+    }
     .contact-container {
       max-width: 600px;
       margin: 2rem auto;
@@ -85,20 +136,26 @@
     button:hover {
       background: #b185db;
     }
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   <header>
-   <nav>
-  <h1>Dalia Gamal</h1>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="volunteering.html" class="active">Volunteering</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+    <nav>
+      <h1>Dalia Gamal</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="volunteering.html">Volunteering</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
   <h2 class="page-title">Let's Connect!</h2>
