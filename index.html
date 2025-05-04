@@ -52,7 +52,17 @@
     .hero {
       text-align: center;
       padding: 4rem 2rem;
-      background-color: #ffe0f0;
+      background: linear-gradient(45deg, #f8bbd0, #e1bee7);
+      border-radius: 0 0 30px 30px;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .hero::after {
+      content: "✨";
+      position: absolute;
+      right: 30px;
+      top: 20px;
+      font-size: 2rem;
     }
     .hero h2 {
       font-family: 'Caveat', cursive;
@@ -64,30 +74,95 @@
       font-size: 1.2rem;
       color: #5e4b56;
     }
-    .about {
-      padding: 3rem 2rem;
-      max-width: 800px;
-      margin: auto;
+    .section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
       background: white;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      margin-top: 2rem;
+      position: relative;
     }
-    .about h2 {
+    .section::before {
+      content: "";
+      position: absolute;
+      left: -15px;
+      top: -15px;
+      width: 50px;
+      height: 50px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23e1bee7"><path d="M12 2L4 12l8 10 8-10z"/></svg>') no-repeat;
+      opacity: 0.7;
+    }
+    .section h2 {
       font-family: 'Caveat', cursive;
       font-size: 2.2rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       color: #7b1fa2;
+      border-bottom: 2px dashed #e1bee7;
+      padding-bottom: 0.5rem;
     }
-    .about p {
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
+    .experience-item {
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #f3e5f5;
+    }
+    .experience-item:last-child {
+      border-bottom: none;
+    }
+    .job-title {
+      font-weight: bold;
+      color: #6a1b9a;
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+    }
+    .company {
+      font-style: italic;
+      color: #888;
+      display: inline-block;
+      margin-right: 1rem;
+    }
+    .date {
+      color: #b185db;
+      font-weight: bold;
+    }
+    .responsibilities {
+      margin-top: 1rem;
+      padding-left: 1.5rem;
+    }
+    .responsibilities li {
+      margin-bottom: 0.5rem;
+      list-style-type: circle;
+    }
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .highlight-card {
+      background: #f9f0ff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      border-left: 4px solid #b185db;
+    }
+    .highlight-card h3 {
+      font-family: 'Caveat', cursive;
+      color: #6a1b9a;
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
     }
     footer {
       text-align: center;
       margin-top: 3rem;
       font-size: 0.9rem;
       color: #888;
+    }
+    .signature {
+      font-family: 'Caveat', cursive;
+      font-size: 1.8rem;
+      color: #7b1fa2;
+      text-align: right;
+      margin-top: 1rem;
     }
   </style>
 </head>
@@ -106,21 +181,92 @@
 
   <section class="hero">
     <h2>Hi, I'm Dalia 👩‍💻</h2>
-    <p>Software Engineer | Full Stack Developer | Passionate Learner</p>
+    <p>Software Engineer | Full Stack Developer | Business Analysis & RPA Specialist</p>
   </section>
 
-  <section class="about">
-    <h2>My Story</h2>
+  <section class="section">
+    <h2>Professional Experience</h2>
+    
+    <div class="experience-item">
+      <div class="job-title">Business Analysis and RPA Trainee</div>
+      <div>
+        <span class="company">Information Technology Institute (ITI)</span>
+        <span class="date">03/2025 – Present</span>
+      </div>
+      <ul class="responsibilities">
+        <li>Participating in intensive training program focusing on Business Analysis and Robotic Process Automation</li>
+        <li>Developing skills in requirement gathering and workflow optimization</li>
+        <li>Delivering automation solutions using industry-standard tools</li>
+      </ul>
+    </div>
+    
+    <div class="experience-item">
+      <div class="job-title">Technical Talent Acquisition Specialist</div>
+      <div>
+        <span class="company">Amit Learning</span>
+        <span class="date">08/2024 – 01/2025</span>
+      </div>
+      <ul class="responsibilities">
+        <li>Conducted technical sourcing and screening for software engineering roles</li>
+        <li>Built strong understanding of IT technical stacks and job requirements</li>
+        <li>Applied recruitment best practices for technical positions</li>
+      </ul>
+    </div>
+    
+    <div class="experience-item">
+      <div class="job-title">Backend Volunteer</div>
+      <div>
+        <span class="company">Minders</span>
+        <span class="date">02/2023 – 08/2023</span>
+      </div>
+      <ul class="responsibilities">
+        <li>Developed scalable APIs and backend services for business platforms</li>
+        <li>Participated in agile team ceremonies and code reviews</li>
+      </ul>
+    </div>
+    
+    <div class="experience-item">
+      <div class="job-title">Automation Engineer Intern</div>
+      <div>
+        <span class="company">First Gulf Solutions</span>
+        <span class="date">08/2022 – 09/2022</span>
+      </div>
+      <ul class="responsibilities">
+        <li>Assisted in automating backend processes for enterprise applications</li>
+        <li>Supported digital transformation initiatives through system integration</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>My Professional Profile</h2>
     <p>
-      I'm Dalia, a detail-loving software engineer who enjoys making tech feel human. I blend creativity and code to build apps that solve problems and spark smiles.
+      Computer Science graduate from Cairo University with expertise in software engineering and business analysis. 
+      Passionate about creating solutions that blend technical excellence with user-centric design.
     </p>
-    <p>
-      With a passion for continuous learning, I’ve explored full-stack development, RPA, and even dipped my toes into business analysis. Every new project is a blank notebook page — and I love writing something meaningful on it.
-    </p>
+    
+    <div class="highlights">
+      <div class="highlight-card">
+        <h3>Technical Skills</h3>
+        <p>C++, Python, Java | Flutter | SQL | EF Core | Agile | UI/UX Design</p>
+      </div>
+      
+      <div class="highlight-card">
+        <h3>Certifications</h3>
+        <p>ISTQB | Scrum | Red Hat | IBM Software Engineering</p>
+      </div>
+      
+      <div class="highlight-card">
+        <h3>Education</h3>
+        <p>B.Sc. in Computer Science & AI - Cairo University (2020-2024)</p>
+      </div>
+    </div>
+    
+    <p class="signature">Dalia Gamal</p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Dalia Gamal</p>
+    <p>&copy; 2025 Dalia Gamal | daliagamal112024@gmail.com | +20 1272199965</p>
   </footer>
 </body>
 </html>
