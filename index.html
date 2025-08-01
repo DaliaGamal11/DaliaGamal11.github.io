@@ -193,35 +193,40 @@
 
 
     
-   .certifications {
+  .certifications {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  padding: 20px;
 }
 
 .cert-card {
-  background-color: #f9f0ff;
-  border: 1px solid #ddd;
-  padding: 15px;
-  border-radius: 10px;
-  width: 300px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  background-color: #ffffff; /* نفس الخلفية بتاعة skills */
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  border-radius: 15px;
+  width: 250px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  text-align: left;
 }
 
 .cert-card:hover {
-  transform: scale(1.03);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
 
 .cert-card h3 {
-  font-size: 1.1em;
-  margin-bottom: 5px;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #333;
 }
 
 .cert-card p {
-  font-size: 0.9em;
-  color: #555;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
 }
 
 
