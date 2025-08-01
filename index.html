@@ -150,18 +150,37 @@
       margin-bottom: 0.5rem;
       font-size: 1.5rem;
     }
-    .certifications {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    .cert-card {
-      background: #f9f0ff;
-      padding: 1.5rem;
-      border-radius: 10px;
-      border-top: 3px solid #b185db;
-    }
+   .certifications {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.cert-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.cert-card:hover {
+  transform: scale(1.03);
+}
+
+.cert-card h3 {
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+
+.cert-card p {
+  font-size: 0.9em;
+  color: #555;
+}
+
     .skills-container {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
