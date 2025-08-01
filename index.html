@@ -152,73 +152,44 @@
     }
 
 
-.skills-container {
-  display: flex;
-  grid-template-columns: repeat(3, 1fr);
-  flex-wrap: wrap;
+
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
+  margin-top: 1rem;
 }
 
-.skill-category {
-  background: #f8eafa;
+.skill-card {
+  background: #f9f0ff;
   border-radius: 12px;
-  padding: 15px 20px;
-  width: 260px;
-  box-shadow: 0 4px 8px rgba(176, 139, 202, 0.2);
-  border-left: 4px dashed #d1a5e4;
+  padding: 1rem;
+  border-left: 4px solid #b185db;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   transition: transform 0.3s ease;
 }
 
-.skill-category:hover {
-  transform: scale(1.02);
+.skill-card:hover {
+  transform: scale(1.03);
 }
 
-.skill-category h4 {
-  margin-bottom: 10px;
-  font-size: 1.2em;
+.skill-card h4 {
   color: #6a1b9a;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
   font-weight: bold;
-  border-bottom: 1px dashed #d8b3ea;
-  padding-bottom: 5px;
 }
 
 .skill-item {
-  background-color: #ffffff;
-  margin: 6px 0;
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-size: 0.95em;
-  color: #5e4b56;
-  box-shadow: 0 2px 4px rgba(100, 60, 100, 0.05);
+  font-size: 0.95rem;
+  color: #3c2a21;
+  line-height: 1.5;
 }
 
 
-.soft-skills {
-  margin-top: 40px;
-  text-align: left;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
-.soft-skills h3 {
-  font-size: 1.3em;
-  color: #2c3e50;
-  margin-bottom: 10px;
-}
 
-.soft-skills ul {
-  list-style-type: "✔ ";
-  padding-left: 20px;
-  color: #444;
-}
-
-.soft-skills li {
-  margin-bottom: 8px;
-  font-size: 1em;
-}
 
 
     
@@ -433,19 +404,13 @@
       <div class="skill-item">Adobe XD</div>
       <div class="skill-item">Figma</div>
     </div>
+    <div class="skill-card">
+    <h4>Soft Skills</h4>
+    <div class="skill-item">Communication, Teamwork, Problem Solving, Time Management, Adaptability, Critical Thinking, Creativity</div>
+  </div>
   </div>
 
-  <!-- Soft Skills -->
- <div class="skill-category">
-  <h4>Soft Skills</h4>
-  <div class="skill-item">Communication</div>
-  <div class="skill-item">Teamwork</div>
-  <div class="skill-item">Problem Solving</div>
-  <div class="skill-item">Time Management</div>
-  <div class="skill-item">Adaptability</div>
-  <div class="skill-item">Critical Thinking</div>
-  <div class="skill-item">Creativity</div>
-</div>
+
 
 </section>
 
