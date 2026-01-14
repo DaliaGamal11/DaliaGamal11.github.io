@@ -8,8 +8,56 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #F5F5F5;
-    color: #333;
+    color: #222;
     line-height: 1.6;
+}
+
+/* Header / Navigation */
+#main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,0.85);
+    z-index: 10;
+    backdrop-filter: blur(10px);
+}
+
+.logo-avatar {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.menu-toggle {
+    font-size: 2rem;
+    cursor: pointer;
+    display: block;
+}
+
+.nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: #FFF8DC;
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.nav-menu a {
+    margin: 0.5rem 0;
+    text-decoration: none;
+    color: #222;
+    font-weight: 600;
+}
+
+.nav-menu.active {
+    display: flex;
 }
 
 /* Hero Section */
@@ -19,7 +67,7 @@ body {
     justify-content: center;
     min-height: 100vh;
     padding: 2rem;
-    background: linear-gradient(135deg, #FF6F61, #6AC1FF); /* Gradient جذاب */
+    background: linear-gradient(135deg, #FFA41B, #FFDD00, #FF6D00);
     position: relative;
     overflow: hidden;
     text-align: center;
@@ -32,7 +80,7 @@ body {
 .avatar {
     width: 150px;
     border-radius: 50%;
-    border: 5px solid #FFB347;
+    border: 5px solid #FF6D00;
     animation: float 4s ease-in-out infinite;
 }
 
@@ -45,19 +93,19 @@ body {
 .hero-text h1 {
     font-family: 'Poppins', sans-serif;
     font-size: 2.5rem;
-    color: #fff;
+    color: #222;
     margin-bottom: 0.5rem;
 }
 
 .hero-text p {
-    color: #fff;
+    color: #222;
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
 }
 
 .cta-btn {
-    background-color: #FFB347;
-    color: #fff;
+    background-color: #FFDD00;
+    color: #222;
     padding: 0.75rem 1.5rem;
     text-decoration: none;
     border-radius: 30px;
@@ -67,17 +115,65 @@ body {
 
 .cta-btn:hover {
     transform: scale(1.1);
-    background-color: #FF6F61;
+    background-color: #FFA41B;
 }
 
-/* Placeholder for hero background shapes */
+/* Hero background shapes */
 .hero-background-shapes {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* لاحقاً نضيف SVG / floating shapes */
     z-index: 1;
     pointer-events: none;
+}
+
+/* About Me Section */
+#about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    padding: 2rem;
+    position: relative;
+}
+
+.about-card {
+    background: linear-gradient(135deg, #FFFAE3, #FFF5B7);
+    padding: 2rem;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    max-width: 600px;
+    text-align: center;
+    animation: floatAbout 6s ease-in-out infinite;
+}
+
+.about-card h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #FF6D00;
+    margin-bottom: 1rem;
+}
+
+.about-card p {
+    font-size: 1.1rem;
+    color: #222;
+    line-height: 1.6;
+}
+
+@keyframes floatAbout {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Sections placeholders */
+section {
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #FF6D00;
+    margin-bottom: 2rem;
 }
