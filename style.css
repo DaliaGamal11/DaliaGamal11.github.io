@@ -12,7 +12,7 @@ body {
     line-height: 1.6;
 }
 
-/* Header / Navigation */
+/* Header */
 #main-header {
     position: fixed;
     top: 0;
@@ -21,43 +21,70 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(255,255,255,0.85);
+    background: linear-gradient(135deg, #7B1FA2, #9C27B0);
+    color: #fff;
     z-index: 10;
-    backdrop-filter: blur(10px);
+    font-family: 'Poppins', sans-serif;
 }
 
 .logo-avatar {
     width: 50px;
     border-radius: 50%;
+    border: 2px solid #fff;
 }
 
-.menu-toggle {
-    font-size: 2rem;
-    cursor: pointer;
-    display: block;
+/* Menu */
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
 }
 
-.nav-menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    background: #FFF8DC;
-    border-radius: 15px;
-    padding: 1rem;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+.nav-menu ul li {
+    position: relative;
 }
 
 .nav-menu a {
-    margin: 0.5rem 0;
+    color: #fff;
     text-decoration: none;
-    color: #222;
     font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-.nav-menu.active {
+.nav-menu a:hover {
+    color: #FFD700;
+}
+
+/* Drop-down */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    background: #9C27B0;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-direction: column;
+    min-width: 180px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+.dropdown-menu li a {
+    padding: 0.75rem 1rem;
+    display: block;
+    color: #fff;
+    font-weight: 500;
+}
+
+.dropdown:hover .dropdown-menu {
     display: flex;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #7B1FA2;
+    color: #FFD700;
 }
 
 /* Hero Section */
@@ -67,10 +94,11 @@ body {
     justify-content: center;
     min-height: 100vh;
     padding: 2rem;
-    background: linear-gradient(135deg, #FFA41B, #FFDD00, #FF6D00);
+    background: linear-gradient(135deg, #7B1FA2, #9C27B0, #BA68C8);
     position: relative;
     overflow: hidden;
     text-align: center;
+    color: #fff;
 }
 
 .hero-content {
@@ -80,11 +108,10 @@ body {
 .avatar {
     width: 150px;
     border-radius: 50%;
-    border: 5px solid #FF6D00;
+    border: 5px solid #FFD700;
     animation: float 4s ease-in-out infinite;
 }
 
-/* Floating animation للـ avatar */
 @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-15px); }
@@ -93,19 +120,17 @@ body {
 .hero-text h1 {
     font-family: 'Poppins', sans-serif;
     font-size: 2.5rem;
-    color: #222;
     margin-bottom: 0.5rem;
 }
 
 .hero-text p {
-    color: #222;
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
 }
 
 .cta-btn {
-    background-color: #FFDD00;
-    color: #222;
+    background-color: #FFD700;
+    color: #7B1FA2;
     padding: 0.75rem 1.5rem;
     text-decoration: none;
     border-radius: 30px;
@@ -114,59 +139,40 @@ body {
 }
 
 .cta-btn:hover {
+    background-color: #FFB300;
     transform: scale(1.1);
-    background-color: #FFA41B;
 }
 
-/* Hero background shapes */
-.hero-background-shapes {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    pointer-events: none;
-}
-
-/* About Me Section */
-#about {
+/* Cards */
+.cards-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    min-height: 60vh;
+    gap: 2rem;
     padding: 2rem;
-    position: relative;
 }
 
-.about-card {
+.card, .project-card {
     background: linear-gradient(135deg, #FFFAE3, #FFF5B7);
     padding: 2rem;
     border-radius: 25px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    max-width: 600px;
+    max-width: 300px;
     text-align: center;
-    animation: floatAbout 6s ease-in-out infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.about-card h2 {
-    font-family: 'Poppins', sans-serif;
-    color: #FF6D00;
+.card:hover, .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.card h3, .project-card h3 {
+    color: #7B1FA2;
     margin-bottom: 1rem;
+    font-family: 'Poppins', sans-serif;
 }
 
-.about-card p {
-    font-size: 1.1rem;
-    color: #222;
-    line-height: 1.6;
-}
-
-@keyframes floatAbout {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-}
-
-/* Sections placeholders */
 section {
     padding: 5rem 2rem;
     text-align: center;
@@ -174,6 +180,6 @@ section {
 
 h2 {
     font-family: 'Poppins', sans-serif;
-    color: #FF6D00;
+    color: #7B1FA2;
     margin-bottom: 2rem;
 }
