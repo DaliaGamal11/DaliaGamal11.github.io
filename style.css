@@ -1,0 +1,83 @@
+/* Fonts & Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F5F5F5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Hero Section */
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+    background: linear-gradient(135deg, #FF6F61, #6AC1FF); /* Gradient جذاب */
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.hero-content {
+    z-index: 2;
+}
+
+.avatar {
+    width: 150px;
+    border-radius: 50%;
+    border: 5px solid #FFB347;
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Floating animation للـ avatar */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.hero-text h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.hero-text p {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-btn {
+    background-color: #FFB347;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+    transform: scale(1.1);
+    background-color: #FF6F61;
+}
+
+/* Placeholder for hero background shapes */
+.hero-background-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* لاحقاً نضيف SVG / floating shapes */
+    z-index: 1;
+    pointer-events: none;
+}
