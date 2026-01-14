@@ -18,14 +18,22 @@
         <div class="logo">
             <img src="avatar-cartoon.jpeg" alt="Dalia Logo" class="logo-avatar">
         </div>
-        <div class="menu-toggle" id="menu-toggle">☰</div>
+
         <nav id="nav-menu" class="nav-menu">
-            <a href="#hero">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#experience">Experience</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li class="dropdown">
+                    <a href="#about">About ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#about">About Me</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                    </ul>
+                </li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#ai-automation">AI Fun</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -42,47 +50,74 @@
             </div>
         </div>
         <div class="hero-background-shapes">
-            <!-- هنا ممكن نضيف shapes يدوياً أو SVG لاحقاً -->
+            <!-- floating shapes / SVG placeholders -->
         </div>
     </header>
 
-    <!-- About Me Section -->
+    <!-- About Me + Volunteering + Skills Section -->
     <section id="about">
-        <div class="about-card">
-            <h2>About Me</h2>
-            <p>Curious mind with a brush and a code. I love building automations while exploring creativity through art.</p>
+        <div class="cards-container">
+            <div class="card">
+                <h3>About Me</h3>
+                <p>Curious mind with a brush and a code. I love building automations while exploring creativity through art.</p>
+            </div>
+            <div class="card">
+                <h3>Volunteering</h3>
+                <p>President at ELDER, Head of HR for Society of Petroleum Engineers – helping communities grow.</p>
+            </div>
+            <div class="card">
+                <h3>Skills</h3>
+                <p>Full Stack Development, RPA, Business Analysis, UI/UX, and more…</p>
+            </div>
         </div>
     </section>
 
-    <!-- Projects Section Placeholder -->
+    <!-- Projects Section -->
     <section id="projects">
         <h2>My Projects</h2>
         <div class="projects-container">
-            <!-- كل مشروع هيكون card هنا -->
+            <div class="project-card">
+                <h3>Project 1</h3>
+                <p>Short description of project 1, simple and fun for non-tech audience.</p>
+            </div>
+            <div class="project-card">
+                <h3>Project 2</h3>
+                <p>Short description of project 2 with illustrations or animation.</p>
+            </div>
+            <div class="project-card">
+                <h3>Project 3</h3>
+                <p>Another project card example, interactive on hover.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Work / Training / Volunteering -->
+    <!-- Experience Section -->
     <section id="experience">
         <h2>Experience</h2>
-        <div class="experience-timeline">
-            <!-- Timeline cards -->
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-container">
-            <!-- Icons + progress bars -->
+        <div class="cards-container">
+            <div class="card">
+                <h3>Work</h3>
+                <p>Backend Developer at XYZ company, building scalable solutions and automations.</p>
+            </div>
+            <div class="card">
+                <h3>Training</h3>
+                <p>RPA, Business Analysis & Full Stack Development trainings completed at ITI and other platforms.</p>
+            </div>
         </div>
     </section>
 
     <!-- AI / Automation Cartoon Section -->
     <section id="ai-automation">
         <h2>Fun Automation Explainers 🤖</h2>
-        <div class="automation-cards">
-            <!-- cartoon animation placeholders -->
+        <div class="cards-container">
+            <div class="card">
+                <h3>Automation 1</h3>
+                <p>Mini cartoon explaining contract renewal flow with simple visuals.</p>
+            </div>
+            <div class="card">
+                <h3>Automation 2</h3>
+                <p>Illustrated workflow of probation period automation simplified for everyone.</p>
+            </div>
         </div>
     </section>
 
