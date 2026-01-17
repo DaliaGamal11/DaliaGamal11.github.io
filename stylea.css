@@ -80,6 +80,10 @@ body {
   text-decoration: none;
   font-weight: 600;
   width: fit-content;
+  display: block;       /* عشان الزرار يكون block */
+  margin-top: 1rem;     /* مسافة صغيرة فوقه */
+  margin-left: auto;    /* يمين + يسار auto = مركزي */
+  margin-right: auto;
 }
 
 /* CARDS */
