@@ -5,188 +5,132 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+  overflow: hidden; /* 🚫 NO SCROLL */
+}
+
 body {
   font-family: 'Roboto', sans-serif;
-  background: #6A1B9A;
+  background: linear-gradient(135deg,#6A1B9A,#AB47BC,#CE93D8);
   color: white;
-  overflow-x: hidden;
 }
 
-/* HEADER */
-#main-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 1rem 2rem;
-  background: linear-gradient(135deg,#6A1B9A,#AB47BC);
-  z-index: 100;
-}
-
-.nav-menu ul {
+/* FULL SCREEN */
+.screen {
+  height: 100vh;
+  width: 100vw;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem;
   gap: 2rem;
-  list-style: none;
 }
 
-.nav-menu a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-/* HERO */
-#hero {
-  min-height: 100vh;
-  padding-top: 6rem;
+/* COLUMNS */
+.col {
+  height: 100%;
   display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-layout {
-  max-width: 1400px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1fr 2fr 1.3fr;
-  gap: 3rem;
-  align-items: center;
-  padding: 2rem;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* AVATAR */
+.avatar-col {
+  align-items: center;
+  flex: 1;
+}
+
 .avatar-col img {
-  width: 180px;
+  width: 170px;
   border-radius: 50%;
   border: 4px solid white;
   animation: float 4s ease-in-out infinite;
 }
 
 /* TEXT */
+.text-col {
+  flex: 2;
+}
+
 .text-col h1 {
   font-family: 'Poppins', sans-serif;
-  font-size: 2.6rem;
+  font-size: 2.5rem;
 }
 
 .text-col p {
   margin: 1.2rem 0;
-  line-height: 1.7;
+  line-height: 1.6;
+  max-width: 520px;
 }
 
 .focus-box {
   background: rgba(255,255,255,0.15);
-  padding: 1.2rem;
-  border-radius: 18px;
-  margin: 1.5rem 0;
+  padding: 1rem;
+  border-radius: 16px;
+  margin-bottom: 1.2rem;
+  width: fit-content;
 }
 
 .cta-btn {
-  display: inline-block;
-  margin-top: 1rem;
   background: #FFD700;
   color: #6A1B9A;
-  padding: 0.8rem 1.6rem;
+  padding: 0.7rem 1.5rem;
   border-radius: 30px;
   text-decoration: none;
   font-weight: 600;
-  transition: 0.3s;
-}
-
-.cta-btn:hover {
-  transform: scale(1.1);
+  width: fit-content;
 }
 
 /* CARDS */
 .cards-col {
-  display: flex;
-  flex-direction: column;
+  flex: 1.3;
   align-items: center;
 }
 
 .cards {
+  height: 260px;           /* 🔒 ثابت */
+  width: 280px;
+  overflow: hidden;
   display: flex;
   gap: 1rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 1rem;
-  max-width: 320px;
+  cursor: grab;
 }
 
 .card {
   min-width: 260px;
   background: white;
   color: #222;
-  padding: 1.5rem;
+  padding: 1.4rem;
   border-radius: 20px;
   box-shadow: 0 15px 30px rgba(0,0,0,0.25);
-  scroll-snap-align: center;
   transition: transform 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-8px) rotate(-1deg);
+  transform: translateY(-6px) rotate(-1deg);
 }
 
 .hint {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   opacity: 0.6;
+  margin-top: 0.5rem;
 }
 
-/* FLOATING SHAPES */
-.shape {
-  position: absolute;
-  opacity: 0.25;
-}
-
-.circle {
-  width: 80px;
-  height: 80px;
-  background: #BA68C8;
-  border-radius: 50%;
-  top: 15%;
-  left: 10%;
-  animation: move1 6s infinite alternate;
-}
-
-.triangle {
-  width: 60px;
-  height: 60px;
-  background: #9C27B0;
-  clip-path: polygon(50% 0%,0% 100%,100% 100%);
-  right: 15%;
-  top: 25%;
-  animation: move2 5s infinite alternate;
-}
-
-.blob {
-  width: 100px;
-  height: 100px;
-  background: #8E24AA;
-  border-radius: 40% 60% 60% 40%;
-  bottom: 10%;
-  left: 35%;
-  animation: move3 7s infinite alternate;
-}
-
-/* ANIMATIONS */
+/* ANIMATION */
 @keyframes float {
   0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+  50% { transform: translateY(-14px); }
 }
 
-@keyframes move1 { to { transform: translateY(20px); } }
-@keyframes move2 { to { transform: translateX(-20px); } }
-@keyframes move3 { to { transform: translate(20px,-15px); } }
-
-/* RESPONSIVE */
+/* RESPONSIVE (STILL NO SCROLL) */
 @media (max-width: 900px) {
-  .hero-layout {
-    grid-template-columns: 1fr;
-    text-align: center;
+  .screen {
+    flex-direction: column;
+    padding: 1.5rem;
   }
 
   .cards {
-    max-width: 100%;
+    width: 90vw;
   }
 }
