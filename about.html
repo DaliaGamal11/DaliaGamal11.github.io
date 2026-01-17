@@ -1,68 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dalia Gamal</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Dalia Gamal</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- MENU -->
-<header class="top-nav">
-  <ul>
-    <li>Home</li>
-    <li>About</li>
-    <li>Projects</li>
-    <li>AI Fun</li>
-    <li>Contact</li>
-  </ul>
+    <!-- Header / Navigation -->
+    <header id="main-header">
+        <nav id="nav-menu" class="nav-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="ai-automation.html">AI Fun</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+   <!-- Hero Section -->
+<header id="hero">
+    <div class="hero-content">
+        <img src="avatar-cartoon.jpeg" alt="Dalia Avatar" class="avatar">
+
+        <div class="hero-text">
+            <h1>So… who’s Dalia? 👀</h1>
+
+            <p>
+                I’m a Software Engineer who believes code doesn’t have to be boring.<br>
+                I mix logic with creativity, automation with curiosity,<br>
+                and I love building things that actually <strong>feel alive</strong>.
+            </p>
+          <h2 style="margin-top:1.5rem;">Fun Facts 🎈</h2>
+            <p style="margin-top:1rem;">
+                 Coffee-powered problem solver ☕ <br>
+                 Turning ideas into visuals & experiences 🎨 <br>
+                 Automation makes me weirdly happy 🤖<br>
+                 Curious mind, creative soul 🧠 <br>
+                 Always learning 🧠
+            </p>
+           <h2 style="margin-top:1.5rem;">Current Focus 🔍</h2>
+            <p style="margin-top:1.2rem; font-style:italic;">
+             Currently exploring <strong>AI, Automation & Creative Tech</strong>,<br>
+                building projects that blend technology with personality,<br>
+                and crafting experiences that people actually enjoy using.
+            </p>
+
+            <a href="projects.html" class="cta-btn">See What I Build</a>
+        </div>
+    </div>
+
+    <!-- Floating shapes -->
+    <div class="floating-shapes">
+        <div class="shape circle"></div>
+        <div class="shape triangle"></div>
+        <div class="shape blob"></div>
+    </div>
 </header>
 
-<!-- SCREEN -->
-<section class="screen">
+    <footer>
+        <p>&copy; 2026 Dalia Gamal</p>
+    </footer>
 
-  <!-- AVATAR -->
-  <div class="col avatar-col">
-    <img src="avatar-cartoon.jpeg" alt="Dalia Avatar">
-  </div>
-
-  <!-- ABOUT -->
-  <div class="col text-col">
-    <h1>So… who’s Dalia? 👀</h1>
-
-    <p>
-      I’m a Software Engineer who believes code doesn’t have to be boring.
-      I mix logic with creativity, automation with curiosity,
-      and I love building things that actually <strong>feel alive</strong>.
-    </p>
-
-    <div class="focus-box">
-      <h4>Current Focus 🔍</h4>
-      <p>AI · Automation · Creative Tech</p>
-    </div>
-
-    <a class="cta-btn">See What I Build</a>
-  </div>
-
-  <!-- FUN FACTS -->
-  <div class="col cards-col">
-    <div class="fun-card" id="funCard">
-      ☕ Coffee-powered problem solver
-    </div>
-
-    <div class="progress">
-      <div class="progress-bar" id="progressBar"></div>
-    </div>
-
-    <span class="click-hint">Click card</span>
-  </div>
-
-</section>
-
-<script src="script.js"></script>
 </body>
 </html>
