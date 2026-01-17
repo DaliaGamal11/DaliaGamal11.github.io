@@ -38,50 +38,29 @@ body {font-family:'Roboto',sans-serif; background:#f5f5f5; color:#222; line-heig
     }
 }
 
-/* Fun Facts Cards */
-.fun-facts {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 1rem;
-}
 
-.card {
-    background: rgba(255, 255, 255, 0.9);
-    color: #6A1B9A;
-    padding: 1rem 2rem;
-    border-radius: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.5s ease;
-    opacity: 0;
-    transform: scale(0.8);
-    max-width: 300px;
-    text-align: center;
-}
 
-/* البطاقة النشطة تظهر */
-.card.active {
-    opacity: 1;
-    transform: scale(1);
-}
 
-/* Hover effect */
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.fun-facts .card');
+    let currentIndex = 0;
 
-/* Responsive */
-@media (max-width: 600px) {
-    .card {
-        max-width: 90%;
-        padding: 1rem 1.2rem;
-        font-size: 0.9rem;
-    }
-}
+    cards.forEach((card, index) => {
+        card.addEventListener('click', () => {
+            // إزالة الكلاس active من البطاقة الحالية
+            card.classList.remove('active');
+
+            // تحديث المؤشر
+            currentIndex = (index + 1) % cards.length;
+
+            // إضافة الكلاس active للبطاقة التالية
+            cards[currentIndex].classList.add('active');
+        });
+    });
+});
+</script>
+
 
 
 
