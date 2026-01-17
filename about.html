@@ -10,7 +10,6 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="stylea.css">
-
 </head>
 <body>
 
@@ -29,66 +28,66 @@
         </nav>
     </header>
 
-   <!-- Hero Section -->
-<header id="hero">
-    <div class="hero-content">
-        <img src="avatar-cartoon.jpeg" alt="Dalia Avatar" class="avatar">
+    <!-- Hero Section -->
+    <header id="hero">
+        <div class="hero-content">
+            <img src="avatar-cartoon.jpeg" alt="Dalia Avatar" class="avatar">
 
-        <div class="hero-text">
-            <h1>So… who’s Dalia? 👀</h1>
+            <div class="hero-text">
+                <h1>So… who’s Dalia? 👀</h1>
+                <p>
+                    I’m a Software Engineer who believes code doesn’t have to be boring.<br>
+                    I mix logic with creativity, automation with curiosity,<br>
+                    and I love building things that actually <strong>feel alive</strong>.
+                </p>
 
-            <p>
-                I’m a Software Engineer who believes code doesn’t have to be boring.<br>
-                I mix logic with creativity, automation with curiosity,<br>
-                and I love building things that actually <strong>feel alive</strong>.
-            </p>
-        <h2 style="margin-top:1.5rem;">Fun Facts 🎈</h2>
-<div class="fun-facts">
-    <div class="card active">Coffee-powered problem solver ☕</div>
-    <div class="card">Turning ideas into visuals & experiences 🎨</div>
-    <div class="card">Automation makes me weirdly happy 🤖</div>
-    <div class="card">Curious mind, creative soul 🧠</div>
-    <div class="card">Always learning 🧠</div>
-</div>
+                <!-- Fun Facts Cards -->
+                <h2 style="margin-top:1.5rem;">Fun Facts 🎈</h2>
+                <div class="fun-facts">
+                    <div class="card active">Coffee-powered problem solver ☕</div>
+                    <div class="card">Turning ideas into visuals & experiences 🎨</div>
+                    <div class="card">Automation makes me weirdly happy 🤖</div>
+                    <div class="card">Curious mind, creative soul 🧠</div>
+                    <div class="card">Always learning 🧠</div>
+                </div>
 
-           <h2 style="margin-top:1.5rem;">Current Focus 🔍</h2>
-            <p style="margin-top:1.2rem; font-style:italic;">
-             Currently exploring <strong>AI, Automation & Creative Tech</strong>,<br>
-                building projects that blend technology with personality,<br>
-                and crafting experiences that people actually enjoy using.
-            </p>
+                <!-- Current Focus -->
+                <h2 style="margin-top:1.5rem;">Current Focus 🔍</h2>
+                <p style="margin-top:1.2rem; font-style:italic;">
+                    Currently exploring <strong>AI, Automation & Creative Tech</strong>,<br>
+                    building projects that blend technology with personality,<br>
+                    and crafting experiences that people actually enjoy using.
+                </p>
 
-            <a href="projects.html" class="cta-btn">See What I Build</a>
+                <a href="projects.html" class="cta-btn">See What I Build</a>
+            </div>
         </div>
-    </div>
 
-    <!-- Floating shapes -->
-    <div class="floating-shapes">
-        <div class="shape circle"></div>
-        <div class="shape triangle"></div>
-        <div class="shape blob"></div>
-    </div>
-</header>
- <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.fun-facts .card');
-    let currentIndex = 0;
+        <!-- Floating shapes -->
+        <div class="floating-shapes">
+            <div class="shape circle"></div>
+            <div class="shape triangle"></div>
+            <div class="shape blob"></div>
+        </div>
+    </header>
 
-    cards.forEach((card, index) => {
-        card.addEventListener('click', () => {
-            // إزالة الكلاس active من البطاقة الحالية
-            card.classList.remove('active');
+    <!-- JS Fun Facts -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const cards = document.querySelectorAll('.fun-facts .card');
+        let currentIndex = 0;
 
-            // تحديث المؤشر
-            currentIndex = (index + 1) % cards.length;
-
-            // إضافة الكلاس active للبطاقة التالية
-            cards[currentIndex].classList.add('active');
+        cards.forEach((card, index) => {
+            card.addEventListener('click', () => {
+                card.classList.remove('active');
+                currentIndex = (index + 1) % cards.length;
+                cards[currentIndex].classList.add('active');
+            });
         });
     });
-});
-</script>
+    </script>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Dalia Gamal</p>
     </footer>
