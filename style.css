@@ -22,9 +22,6 @@ body {font-family:'Roboto',sans-serif; background:#f5f5f5; color:#222; line-heig
 
 
 
-
-
-
 /* RESET */
 * {
   margin: 0;
@@ -34,8 +31,7 @@ body {font-family:'Roboto',sans-serif; background:#f5f5f5; color:#222; line-heig
 
 html, body {
   height: 100%;
-  /* السماح بالسكрол لو محتوى طويل */
-  overflow-y: auto;
+  overflow-y: auto; /* يسمح بالسك롤 */
 }
 
 body {
@@ -49,18 +45,17 @@ body {
   min-height: 100vh;
   width: 100vw;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   padding: 3rem;
   gap: 2rem;
-  flex-wrap: wrap; /* مهم للشاشات الصغيرة */
+  flex-wrap: wrap;
 }
 
 /* COLUMNS */
 .col {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 1rem;
 }
 
@@ -93,14 +88,6 @@ body {
   max-width: 520px;
 }
 
-.focus-box {
-  background: rgba(255,255,255,0.15);
-  padding: 1rem;
-  border-radius: 16px;
-  margin-bottom: 1.2rem;
-  width: fit-content;
-}
-
 .cta-btn {
   background: #FFD700;
   color: #6A1B9A;
@@ -109,6 +96,7 @@ body {
   text-decoration: none;
   font-weight: 600;
   width: fit-content;
+  margin-top: 0.8rem;
 }
 
 /* CARDS */
@@ -118,12 +106,20 @@ body {
 }
 
 .cards {
-  width: 100%;
   display: flex;
   gap: 1rem;
-  cursor: grab;
-  overflow-x: auto;  /* scroll افقي للكروت */
-  padding-bottom: 1rem; /* مساحة لل scroll */
+  overflow-x: auto; /* scroll افقي للكروت */
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+}
+
+.cards::-webkit-scrollbar {
+  height: 8px;
+}
+
+.cards::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.3);
+  border-radius: 4px;
 }
 
 .card {
@@ -135,15 +131,20 @@ body {
   border-radius: 20px;
   box-shadow: 0 15px 30px rgba(0,0,0,0.25);
   transition: transform 0.3s;
-  /* محتوى الكارد يتوسع حسب المحتوى */
-  height: auto;
-  max-height: 100%; 
+
   display: flex;
   flex-direction: column;
+  height: auto;
+}
+
+.card h2 {
+  margin-top: 1rem;
 }
 
 .card p {
-  flex: 1; /* يوسع النص على قد ما محتاج */
+  margin-top: 0.5rem;
+  line-height: 1.5;
+  flex: 1;
 }
 
 .card:hover {
@@ -167,6 +168,7 @@ body {
   .screen {
     flex-direction: column;
     padding: 1.5rem;
+    align-items: center;
   }
 
   .cards {
@@ -177,6 +179,7 @@ body {
     max-width: 90vw;
   }
 }
+
 
 
 
