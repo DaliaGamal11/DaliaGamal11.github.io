@@ -1,4 +1,3 @@
-// Swipe hint animation
 const cards = document.getElementById("cards");
 
 let isDown = false;
@@ -11,13 +10,8 @@ cards.addEventListener("mousedown", (e) => {
   scrollLeft = cards.scrollLeft;
 });
 
-cards.addEventListener("mouseleave", () => {
-  isDown = false;
-});
-
-cards.addEventListener("mouseup", () => {
-  isDown = false;
-});
+cards.addEventListener("mouseleave", () => isDown = false);
+cards.addEventListener("mouseup", () => isDown = false);
 
 cards.addEventListener("mousemove", (e) => {
   if (!isDown) return;
