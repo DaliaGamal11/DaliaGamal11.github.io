@@ -131,3 +131,25 @@ html, body {
   .cards {width:100%;}
   .card {max-width:90vw;}
 }
+/* SPECIFIC FOR ABOUT PAGE */
+.about-page .screen {
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 140px; /* مساحة كافية لتحت المنيو */
+  gap: 1.5rem;
+}
+
+.about-page .avatar-col img {
+  width: 150px; /* أصغر شوية */
+}
+
+.about-page .cards-col {
+  flex: 1; /* أقل مساحة للكروت */
+}
+
+.about-page .card {
+  min-width: 180px; /* أصغر الكروت */
+  max-width: 200px;
+  padding: 1rem;
+}
