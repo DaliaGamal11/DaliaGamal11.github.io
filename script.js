@@ -2,21 +2,19 @@ const cards = document.getElementById("cards");
 
 let isDown = false;
 let startX;
-let scrollLeft;
+let scrollX = 0;
 
 cards.addEventListener("mousedown", (e) => {
   isDown = true;
-  startX = e.pageX - cards.offsetLeft;
-  scrollLeft = cards.scrollLeft;
+  startX = e.pageX;
 });
 
-cards.addEventListener("mouseleave", () => isDown = false);
-cards.addEventListener("mouseup", () => isDown = false);
+window.addEventListener("mouseup", () => {
+  isDown = false;
+});
 
-cards.addEventListener("mousemove", (e) => {
+window.addEventListener("mousemove", (e) => {
   if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - cards.offsetLeft;
-  const walk = (x - startX) * 2;
-  cards.scrollLeft = scrollLeft - walk;
+  const walk = e.pageX - startX;
+  cards.scrollLeft = scrollX - walk;
 });
