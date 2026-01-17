@@ -1,18 +1,20 @@
-const facts = [
-  "☕ Coffee-powered problem solver",
-  "🎨 Turning ideas into visuals",
-  "🤖 Automation makes me weirdly happy",
-  "🧠 Curious & creative mind",
-  "📚 Always learning"
-];
+const cards = document.getElementById("cards");
 
-let index = 0;
+let isDown = false;
+let startX;
+let scrollX = 0;
 
-const card = document.getElementById("funCard");
-const progress = document.getElementById("progressBar");
+cards.addEventListener("mousedown", (e) => {
+  isDown = true;
+  startX = e.pageX;
+});
 
-card.addEventListener("click", () => {
-  index = (index + 1) % facts.length;
-  card.textContent = facts[index];
-  progress.style.width = `${((index + 1) / facts.length) * 100}%`;
+window.addEventListener("mouseup", () => {
+  isDown = false;
+});
+
+window.addEventListener("mousemove", (e) => {
+  if (!isDown) return;
+  const walk = e.pageX - startX;
+  cards.scrollLeft = scrollX - walk;
 });
