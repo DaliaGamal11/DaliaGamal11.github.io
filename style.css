@@ -25,8 +25,6 @@ body {font-family:'Roboto',sans-serif; background:#f5f5f5; color:#222; line-heig
 
 
 
-
-
 /* RESET */
 * {
   margin: 0;
@@ -36,7 +34,8 @@ body {font-family:'Roboto',sans-serif; background:#f5f5f5; color:#222; line-heig
 
 html, body {
   height: 100%;
-  overflow: hidden; /* 🚫 NO SCROLL */
+  /* السماح بالسكрол لو محتوى طويل */
+  overflow-y: auto;
 }
 
 body {
@@ -47,21 +46,22 @@ body {
 
 /* FULL SCREEN */
 .screen {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 3rem;
   gap: 2rem;
+  flex-wrap: wrap; /* مهم للشاشات الصغيرة */
 }
 
 /* COLUMNS */
 .col {
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 1rem;
 }
 
 /* AVATAR */
@@ -118,22 +118,32 @@ body {
 }
 
 .cards {
-  height: 260px;           /* 🔒 ثابت */
-  width: 280px;
-  overflow: hidden;
+  width: 100%;
   display: flex;
   gap: 1rem;
   cursor: grab;
+  overflow-x: auto;  /* scroll افقي للكروت */
+  padding-bottom: 1rem; /* مساحة لل scroll */
 }
 
 .card {
   min-width: 260px;
+  max-width: 280px;
   background: white;
   color: #222;
   padding: 1.4rem;
   border-radius: 20px;
   box-shadow: 0 15px 30px rgba(0,0,0,0.25);
   transition: transform 0.3s;
+  /* محتوى الكارد يتوسع حسب المحتوى */
+  height: auto;
+  max-height: 100%; 
+  display: flex;
+  flex-direction: column;
+}
+
+.card p {
+  flex: 1; /* يوسع النص على قد ما محتاج */
 }
 
 .card:hover {
@@ -152,7 +162,7 @@ body {
   50% { transform: translateY(-14px); }
 }
 
-/* RESPONSIVE (STILL NO SCROLL) */
+/* RESPONSIVE */
 @media (max-width: 900px) {
   .screen {
     flex-direction: column;
@@ -160,15 +170,13 @@ body {
   }
 
   .cards {
-    width: 90vw;
+    width: 100%;
+  }
+
+  .card {
+    max-width: 90vw;
   }
 }
-
-
-
-
-
-
 
 
 
