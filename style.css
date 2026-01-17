@@ -49,7 +49,7 @@ body {
   justify-content: space-between;
   padding: 3rem;
   gap: 2rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* 🟢 خلي الأعمدة جنب بعض على الشاشات الكبيرة */
 }
 
 /* COLUMNS */
@@ -166,9 +166,10 @@ body {
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .screen {
-    flex-direction: column;
+    flex-direction: column; /* على الموبايل يبقى فوق بعض */
     padding: 1.5rem;
     align-items: center;
+    flex-wrap: wrap; /* يسمح للصفوف تنزل لو الشاشة ضيقة */
   }
 
   .cards {
