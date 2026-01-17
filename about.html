@@ -69,23 +69,26 @@
         <div class="shape blob"></div>
     </div>
 </header>
-   <script>
-const cards = document.querySelectorAll('.fun-facts .card');
-let currentIndex = 0;
+ <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.fun-facts .card');
+    let currentIndex = 0;
 
-cards.forEach((card, index) => {
-    card.addEventListener('click', () => {
-        // إزالة الكلاس active من البطاقة الحالية
-        card.classList.remove('active');
+    cards.forEach((card, index) => {
+        card.addEventListener('click', () => {
+            // إزالة الكلاس active من البطاقة الحالية
+            card.classList.remove('active');
 
-        // تحديث المؤشر
-        currentIndex = (index + 1) % cards.length;
+            // تحديث المؤشر
+            currentIndex = (index + 1) % cards.length;
 
-        // إضافة الكلاس active للبطاقة التالية
-        cards[currentIndex].classList.add('active');
+            // إضافة الكلاس active للبطاقة التالية
+            cards[currentIndex].classList.add('active');
+        });
     });
 });
 </script>
+
     <footer>
         <p>&copy; 2026 Dalia Gamal</p>
     </footer>
