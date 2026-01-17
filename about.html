@@ -3,94 +3,79 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Me - Dalia Gamal</title>
+  <title>Dalia Gamal | About</title>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- Header -->
-  <header id="main-header">
-    <nav class="nav-menu">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a class="active" href="about.html">About</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="ai-automation.html">AI Fun</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<header id="main-header">
+  <nav class="nav-menu">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- HERO -->
-  <section id="hero">
-    <div class="hero-grid">
+<section id="hero">
 
-      <!-- Avatar -->
-      <div class="hero-avatar">
-        <img src="avatar-cartoon.jpeg" alt="Dalia Avatar">
-      </div>
+  <div class="hero-layout">
 
-      <!-- Info -->
-      <div class="hero-info">
-        <h1>So… who’s Dalia? 👀</h1>
-        <p>
-          I’m a Software Engineer who believes code doesn’t have to be boring.
-          I mix logic with creativity, automation with curiosity,
-          and I love building things that actually <strong>feel alive</strong>.
-        </p>
-
-        <a href="projects.html" class="cta-btn">See What I Build</a>
-      </div>
-
+    <!-- AVATAR -->
+    <div class="avatar-col">
+      <img src="avatar-cartoon.jpeg" alt="Dalia Avatar">
     </div>
 
-    <!-- Floating shapes -->
-    <div class="floating-shapes">
-      <span class="shape circle"></span>
-      <span class="shape triangle"></span>
-      <span class="shape blob"></span>
-    </div>
-  </section>
-
-  <!-- FUN FACTS -->
-  <section class="fun-facts">
-    <h2>Fun Facts 🎈</h2>
-
-    <div class="cards" id="cards">
-      <div class="card">☕ Coffee-powered problem solver</div>
-      <div class="card">🎨 Turning ideas into visuals</div>
-      <div class="card">🤖 Automation makes me weirdly happy</div>
-      <div class="card">🧠 Curious & creative mind</div>
-      <div class="card">📚 Always learning</div>
-    </div>
-
-    <p class="hint">← swipe me →</p>
-  </section>
-
-  <!-- CURRENT FOCUS -->
-  <section class="focus">
-    <div class="focus-card">
-      <h2>Current Focus 🔍</h2>
+    <!-- TEXT -->
+    <div class="text-col">
+      <h1>So… who’s Dalia? 👀</h1>
       <p>
-        Exploring <strong>AI, Automation & Creative Tech</strong>,
-        building projects that blend technology with personality,
-        and crafting experiences people actually enjoy using.
+        I’m a Software Engineer who believes code doesn’t have to be boring.
+        I mix logic with creativity, automation with curiosity,
+        and I love building things that actually <strong>feel alive</strong>.
       </p>
+
+      <div class="focus-box">
+        <h3>Current Focus 🔍</h3>
+        <p>
+          AI, Automation & Creative Tech — building experiences
+          that feel human, not robotic.
+        </p>
+      </div>
+
+      <a href="#" class="cta-btn">See What I Build</a>
     </div>
-  </section>
 
-  <footer>
-    <p>© 2026 Dalia Gamal</p>
-  </footer>
+    <!-- FLASH CARDS -->
+    <div class="cards-col">
+      <div class="cards" id="cards">
+        <div class="card">☕ Coffee-powered problem solver</div>
+        <div class="card">🎨 Turning ideas into visuals</div>
+        <div class="card">🤖 Automation makes me happy</div>
+        <div class="card">🧠 Curious and creative mind</div>
+        <div class="card">📚 Always learning</div>
+      </div>
+      <span class="hint">← swipe →</span>
+    </div>
 
-  <script src="script.js"></script>
+  </div>
+
+  <!-- Floating shapes -->
+  <div class="floating-shapes">
+    <span class="shape circle"></span>
+    <span class="shape triangle"></span>
+    <span class="shape blob"></span>
+  </div>
+
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
