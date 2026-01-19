@@ -1,89 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Dalia Gamal</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects - Dalia Gamal</title>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+<style>
+/* Reset */
+* {margin:0; padding:0; box-sizing:border-box;}
+body {font-family:'Roboto',sans-serif; background:#f5f5f5; color:#222; overflow-x:hidden;}
+
+/* Header */
+#main-header {
+  position: fixed; top:0; width:100%; padding:1rem 2rem;
+  display:flex; justify-content:center; align-items:center;
+  background: linear-gradient(135deg,#6A1B9A,#AB47BC,#CE93D8);
+  color:#fff; z-index:10; font-family:'Poppins',sans-serif;
+}
+.nav-menu ul {display:flex; list-style:none; gap:2rem; justify-content:center;}
+.nav-menu a {
+    color:#fff; 
+    font-weight:600; 
+    transition:0.3s;
+    text-decoration: none; 
+}
+.nav-menu a.active, .nav-menu a:hover {color:#FFD700;}
+
+/* Hero + horizontal layout */
+#hero {
+  display:flex; align-items:center; justify-content:center; min-height:100vh;
+  background: linear-gradient(135deg,#6A1B9A,#AB47BC,#CE93D8);
+  color:#fff; padding:2rem;
+}
+.hero-left, .hero-right {
+  flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center;
+}
+.hero-left {align-items:center;}
+.hero-left .avatar {width:180px; border-radius:50%; border:4px solid #fff; animation: float 4s ease-in-out infinite;}
+@keyframes float {0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+
+/* Floating shapes */
+.floating-shapes .shape {position:absolute; border-radius:50%; opacity:0.3;}
+.circle {width:80px;height:80px;background:#BA68C8;top:20%;left:10%; animation:move1 6s infinite alternate;}
+.triangle {width:60px;height:60px;background:#9C27B0;clip-path:polygon(50% 0%,0% 100%,100% 100%);top:40%;left:70%; animation:move2 5s infinite alternate;}
+.blob {width:100px;height:100px;background:#8E24AA;border-radius:40% 60% 60% 40%; top:70%; left:30%; animation:move3 7s infinite alternate;}
+@keyframes move1 {0%{transform:translateY(0);}100%{transform:translateY(20px);}}
+@keyframes move2 {0%{transform:translateX(0);}100%{transform:translateX(-20px);}}
+@keyframes move3 {0%{transform:translate(0,0);}100%{transform:translate(20px,-10px);}}
+
+/* Right side content */
+.hero-right {align-items:flex-start; padding-left:2rem;}
+.hero-right h1 {font-family:'Poppins',sans-serif; font-size:2rem; margin-bottom:1rem;}
+.hero-right p {margin-bottom:1.5rem; font-size:1.1rem; line-height:1.4;}
+.cta-btn {padding:.5rem 1.2rem; background:#FFD700; color:#6A1B9A; font-weight:600; border-radius:25px; transition:0.3s;}
+.cta-btn:hover {transform:scale(1.05); background:#FFB300;}
+
+/* Tabs */
+.tabs {display:flex; gap:1rem; margin-bottom:1.5rem; flex-wrap:wrap;}
+.tab-btn {padding:0.4rem 1rem; border-radius:25px; border:none; cursor:pointer; background:#6A1B9A; color:#fff; font-weight:600; transition:0.3s;}
+.tab-btn.active {background:#FFD700; color:#6A1B9A;}
+.tab-content {display:none;}
+.tab-content.active {display:block;}
+.project-card {background:#fff; padding:1rem; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.1); margin-bottom:1rem; transition:transform 0.3s;}
+
+/* Make project card text black */
+.project-card h2,
+.project-card h3,
+.project-card p,
+.project-card span {
+    color: #000;
+}
+
+.project-card:hover {transform:translateY(-5px);}
+.project-actions a {margin-right:10px; padding:0.4rem 1rem; border-radius:25px; background:#FFD700; color:#6A1B9A; font-weight:600; transition:0.3s;}
+.project-actions a.outline-btn {background:#fff; border:2px solid #6A1B9A; color:#6A1B9A;}
+.project-actions a:hover {transform:scale(1.05); background:#FFB300;}
+.projects-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1rem;}
+
+/* Footer */
+footer {padding:1rem; text-align:center; color:#fff; background:#6A1B9A; margin-top:2rem;}
+</style>
 </head>
 <body>
 
-    <!-- Header / Navigation -->
-    <header id="main-header">
-        <nav id="nav-menu" class="nav-menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="experience.html">Experience</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="ai-automation.html">AI Fun</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-   <header id="hero">
-    <div class="hero-content">
-        <img src="avatar-cartoon.jpeg" class="avatar">
-
-        <div class="hero-text">
-            <h1>Projects </h1>
-
-            <p style="margin-top:1rem;">
-                These projects reflect how I think, solve problems,
-                and turn ideas into working solutions.
-            </p>
-
-            <!-- Project 1 -->
-            <h2 style="margin-top:1.5rem;">🤖 Automation Projects</h2>
-            <p>
-                Smart automations designed to reduce manual work,
-                improve accuracy, and save time.
-            </p>
-            <a href="automation-projects.html" class="cta-btn">View Automation Projects</a>
-
-            <!-- Project 2 -->
-            <h2 style="margin-top:1.5rem;">📊 Business and Process Projects</h2>
-            <p>
-                Projects focused on understanding business needs,
-                documenting requirements, and designing solutions.
-            </p>
-            <a href="business-projects.html" class="cta-btn">View Business Projects</a>
-
-            <!-- Project 3 -->
-            <h2 style="margin-top:1.5rem;">🎨💻Software  </h2>
-            <p>
-               Explore my journey from graduation projects to innovative experiments
-            </p>
-            <a href="software.html" class="cta-btn">Explore Software</a>
-        </div>
-    </div>
-
-    <div class="floating-shapes">
-        <div class="shape circle"></div>
-        <div class="shape triangle"></div>
-        <div class="shape blob"></div>
-    </div>
+<!-- Header / Navigation -->
+<header id="main-header">
+  <nav id="nav-menu" class="nav-menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="ai-automation.html">AI Fun</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
-        <!-- Floating shapes -->
-        <div class="floating-shapes">
-            <div class="shape circle"></div>
-            <div class="shape triangle"></div>
-            <div class="shape blob"></div>
-        </div>
-    </header>
+<!-- Hero + Projects Horizontal -->
+<section id="hero">
+  <div class="hero-left">
+    <img src="avatar-cartoon.jpeg" class="avatar">
+  </div>
 
-    <footer>
-        <p>&copy; 2026 Dalia Gamal</p>
-    </footer>
+  <div class="hero-right">
+    <h1> Projects </h1>
+    <p>  These projects reflect how I think, solve problems,and turn ideas into working solutions.</p>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="featured">🤖 Automation Projects</button>
+      <button class="tab-btn" data-tab="other">📊 Business and Process Projects</button>
+      <button class="tab-btn" data-tab="other">🎨💻Software  </button>
+    </div>
+
+    <!-- Tab Contents -->
+    <div class="tab-content active" id="featured">
+      <div class="project-card featured">
+        <p> Smart automations designed to reduce manual work,improve accuracy, and save time.
+        </p>
+        <div class="project-actions">
+          <a href="automation-projects.html">View Automation Projects</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="automation">
+      <div class="projects-grid">
+        <div class="project-card placeholder">
+        </br>
+          <p> Projects focused on understanding business needs,documenting requirements, and designing solutions.</p>
+            <div class="project-actions">
+          <a href="business-projects.html">View Business Projects</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+     <div class="tab-content" id="other">
+      <div class="projects-grid">
+        <div class="project-card placeholder">
+          <h3>More Coming Soon ✨ </h3>
+        </br>
+          <p>Explore my journey from graduation projects to innovative experiments</p>
+            <div class="project-actions">
+          <a href="software.html">Explore Software Projects</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating shapes -->
+  <div class="floating-shapes">
+    <div class="shape circle"></div>
+    <div class="shape triangle"></div>
+    <div class="shape blob"></div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Dalia Gamal</p>
+</footer>
+
+<script>
+const tabs = document.querySelectorAll('.tab-btn');
+const contents = document.querySelectorAll('.tab-content');
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const target = tab.dataset.tab;
+    contents.forEach(c => c.classList.remove('active'));
+    document.getElementById(target).classList.add('active');
+  });
+});
+</script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
