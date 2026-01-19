@@ -21,12 +21,7 @@ body {font-family:'Roboto',sans-serif; background:#f5f5f5; color:#222; overflow-
   color:#fff; z-index:10; font-family:'Poppins',sans-serif;
 }
 .nav-menu ul {display:flex; list-style:none; gap:2rem; justify-content:center;}
-.nav-menu a {
-    color:#fff; 
-    font-weight:600; 
-    transition:0.3s;
-    text-decoration: none; 
-}
+.nav-menu a {color:#fff; font-weight:600; transition:0.3s; text-decoration:none;}
 .nav-menu a.active, .nav-menu a:hover {color:#FFD700;}
 
 /* Hero + horizontal layout */
@@ -54,7 +49,7 @@ body {font-family:'Roboto',sans-serif; background:#f5f5f5; color:#222; overflow-
 /* Right side content */
 .hero-right {align-items:flex-start; padding-left:2rem;}
 .hero-right h1 {font-family:'Poppins',sans-serif; font-size:2rem; margin-bottom:1rem;}
-.hero-right p {margin-bottom:1.5rem; font-size:1.1rem; line-height:1.4;}
+.hero-right p {margin-bottom:1.5rem; font-size:1.1rem; line-height:1.4; text-align:left;}
 .cta-btn {padding:.5rem 1.2rem; background:#FFD700; color:#6A1B9A; font-weight:600; border-radius:25px; transition:0.3s;}
 .cta-btn:hover {transform:scale(1.05); background:#FFB300;}
 
@@ -70,15 +65,13 @@ body {font-family:'Roboto',sans-serif; background:#f5f5f5; color:#222; overflow-
 .project-card h2,
 .project-card h3,
 .project-card p,
-.project-card span {
-    color: #000;
-}
+.project-card span {color:#000;}
 
 .project-card:hover {transform:translateY(-5px);}
 .project-actions a {margin-right:10px; padding:0.4rem 1rem; border-radius:25px; background:#FFD700; color:#6A1B9A; font-weight:600; transition:0.3s;}
 .project-actions a.outline-btn {background:#fff; border:2px solid #6A1B9A; color:#6A1B9A;}
 .project-actions a:hover {transform:scale(1.05); background:#FFB300;}
-.projects-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1rem;}
+.projects-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1rem; text-align:left;}
 
 /* Footer */
 footer {padding:1rem; text-align:center; color:#fff; background:#6A1B9A; margin-top:2rem;}
@@ -108,49 +101,44 @@ footer {padding:1rem; text-align:center; color:#fff; background:#6A1B9A; margin-
   </div>
 
   <div class="hero-right">
-    <h1> Projects </h1>
-    <p>  These projects reflect how I think, solve problems,and turn ideas into working solutions.</p>
+    <h1>Projects</h1>
+    <p>These projects reflect how I think, solve problems, and turn ideas into working solutions.</p>
 
     <!-- Tabs -->
     <div class="tabs">
-      <button class="tab-btn active" data-tab="featured">🤖 Automation Projects</button>
-      <button class="tab-btn" data-tab="other">📊 Business and Process Projects</button>
-      <button class="tab-btn" data-tab="other">🎨💻Software  </button>
+      <button class="tab-btn active" data-tab="automation">🤖 Automation Projects</button>
+      <button class="tab-btn" data-tab="business">📊 Business & Process Projects</button>
+      <button class="tab-btn" data-tab="software">🎨💻 Software Projects</button>
     </div>
 
     <!-- Tab Contents -->
-    <div class="tab-content active" id="featured">
+    <div class="tab-content active" id="automation">
       <div class="project-card featured">
-        <p> Smart automations designed to reduce manual work,improve accuracy, and save time.
-        </p>
+        <p>Smart automations designed to reduce manual work, improve accuracy, and save time.</p>
         <div class="project-actions">
           <a href="automation-projects.html">View Automation Projects</a>
         </div>
       </div>
     </div>
 
-    <div class="tab-content" id="automation">
-      <div class="projects-grid">
-        <div class="project-card placeholder">
-        </br>
-          <p> Projects focused on understanding business needs,documenting requirements, and designing solutions.</p>
-            <div class="project-actions">
+    <div class="tab-content" id="business">
+      <div class="project-card placeholder">
+        <p>Projects focused on understanding business needs, documenting requirements, and designing effective solutions.</p>
+        <div class="project-actions">
           <a href="business-projects.html">View Business Projects</a>
         </div>
       </div>
     </div>
-  </div>
 
-     <div class="tab-content" id="other">
-      <div class="projects-grid">
-        <div class="project-card placeholder">
-        </br>
-          <p>Explore my journey from graduation projects to innovative experiments</p>
-            <div class="project-actions">
+    <div class="tab-content" id="software">
+      <div class="project-card placeholder">
+        <p>Explore my journey from graduation projects to innovative software experiments.</p>
+        <div class="project-actions">
           <a href="software.html">Explore Software Projects</a>
         </div>
       </div>
     </div>
+
   </div>
 
   <!-- Floating shapes -->
@@ -168,6 +156,7 @@ footer {padding:1rem; text-align:center; color:#fff; background:#6A1B9A; margin-
 <script>
 const tabs = document.querySelectorAll('.tab-btn');
 const contents = document.querySelectorAll('.tab-content');
+
 tabs.forEach(tab => {
   tab.addEventListener('click', () => {
     tabs.forEach(t => t.classList.remove('active'));
@@ -181,30 +170,3 @@ tabs.forEach(tab => {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
