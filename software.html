@@ -28,10 +28,10 @@ body {font-family:'Roboto',sans-serif; background:#f5f5f5; color:#222; overflow-
 #hero {
   display:flex; align-items:center; justify-content:center; min-height:100vh;
   background: linear-gradient(135deg,#6A1B9A,#AB47BC,#CE93D8);
-  color:#fff; padding:2rem; position:relative;
+  color:#fff; padding:2rem;
 }
 .hero-left, .hero-right {
-  flex:1; display:flex; flex-direction:column; justify-content:center;
+  flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center;
 }
 .hero-left {align-items:center;}
 .hero-left .avatar {width:180px; border-radius:50%; border:4px solid #fff; animation: float 4s ease-in-out infinite;}
@@ -46,12 +46,12 @@ body {font-family:'Roboto',sans-serif; background:#f5f5f5; color:#222; overflow-
 @keyframes move2 {0%{transform:translateX(0);}100%{transform:translateX(-20px);}}
 @keyframes move3 {0%{transform:translate(0,0);}100%{transform:translate(20px,-10px);}}
 
-/* Right side content with overlay */
-.hero-right {align-items:flex-start; padding-left:2rem; background: rgba(255,255,255,0.05); border-radius: 20px; padding:2rem; backdrop-filter: blur(5px);}
-.hero-right h1 {font-family:'Poppins',sans-serif; font-size:2rem; margin-bottom:1rem; color:#fff; text-shadow: 1px 1px 4px rgba(0,0,0,0.5);}
-.hero-right p {margin-bottom:1.5rem; font-size:1.1rem; line-height:1.4; color:#fff; text-shadow: 1px 1px 4px rgba(0,0,0,0.5);}
-.cta-btn {padding:.5rem 1.2rem; background:#FFD700; color:#6A1B9A; font-weight:600; border-radius:25px; transition:0.3s; text-decoration:none; display:inline-block;}
-.cta-btn:hover {transform:scale(1.05); background:#FFB300; color:#6A1B9A;}
+/* Right side content */
+.hero-right {align-items:flex-start; padding-left:2rem;}
+.hero-right h1 {font-family:'Poppins',sans-serif; font-size:2rem; margin-bottom:1rem;}
+.hero-right p {margin-bottom:1.5rem; font-size:1.1rem; line-height:1.4;}
+.cta-btn {padding:.5rem 1.2rem; background:#FFD700; color:#6A1B9A; font-weight:600; border-radius:25px; transition:0.3s;}
+.cta-btn:hover {transform:scale(1.05); background:#FFB300;}
 
 /* Tabs */
 .tabs {display:flex; gap:1rem; margin-bottom:1.5rem; flex-wrap:wrap;}
@@ -61,7 +61,7 @@ body {font-family:'Roboto',sans-serif; background:#f5f5f5; color:#222; overflow-
 .tab-content.active {display:block;}
 .project-card {background:#fff; padding:1rem; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.1); margin-bottom:1rem; transition:transform 0.3s;}
 .project-card:hover {transform:translateY(-5px);}
-.project-actions a {margin-right:10px; padding:0.4rem 1rem; border-radius:25px; background:#FFD700; color:#6A1B9A; font-weight:600; text-decoration:none; transition:0.3s;}
+.project-actions a {margin-right:10px; padding:0.4rem 1rem; border-radius:25px; background:#FFD700; color:#6A1B9A; font-weight:600; transition:0.3s;}
 .project-actions a.outline-btn {background:#fff; border:2px solid #6A1B9A; color:#6A1B9A;}
 .project-actions a:hover {transform:scale(1.05); background:#FFB300;}
 .projects-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1rem;}
@@ -108,7 +108,7 @@ footer {padding:1rem; text-align:center; color:#fff; background:#6A1B9A; margin-
     <div class="tab-content active" id="featured">
       <div class="project-card featured">
         <h2>Smart Mental Health System 🤖</h2>
-        <p>Chatbot project to help users manage mental health, find therapists, book appointments and more.<br>
+        <p> help users manage mental health, find therapists, book appointments and more.<br>
         Note: You can try with patient account Email: dalia1@gmail.com, pass: dalia123
         </p>
         <div class="project-actions">
