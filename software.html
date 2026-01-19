@@ -1,238 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Software Projects - Dalia Gamal</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Software Projects - Dalia Gamal</title>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 
-    <style>
-        /* Intro Section */
-        .projects-intro {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 35vh;
-            padding: 2rem;
-            text-align: center;
-            background: linear-gradient(135deg, #AB47BC, #CE93D8, #6A1B9A);
-            color: #fff;
-        }
-        .projects-intro h2 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2rem;
-            margin: 0.5rem 0;
-            opacity: 0;
-            animation: fadeIn 1.5s forwards;
-        }
-        .projects-intro p {
-            font-size: 1.2rem;
-            margin-top: 1rem;
-            opacity: 0;
-            animation: fadeIn 1.5s forwards;
-            animation-delay: 0.5s;
-        }
-        .projects-intro .cta-btn {
-            margin-top: 20px;
-            padding: 0.75rem 1.5rem;
-            border-radius: 30px;
-            background: #FFD700;
-            color: #6A1B9A;
-            font-weight: 600;
-            text-decoration: none;
-            transition: transform 0.3s, background 0.3s;
-        }
-        .projects-intro .cta-btn:hover {
-            transform: scale(1.1);
-            background: #FFB300;
-        }
+  <style>
+    /* Reset + Base */
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {font-family:'Roboto',sans-serif; background:#f5f5f5; color:#222; line-height:1.6;}
+    a {text-decoration:none;}
+    
+    /* Header */
+    #main-header {
+      position: fixed; top:0; width:100%; padding:1rem 2rem;
+      display:flex; justify-content:center; align-items:center;
+      background: linear-gradient(135deg, #6A1B9A, #AB47BC, #CE93D8);
+      color:#fff; z-index:10; font-family:'Poppins',sans-serif;
+    }
+    .nav-menu ul {display:flex; list-style:none; gap:2rem; justify-content:center;}
+    .nav-menu a {color:#fff; font-weight:600; transition:0.3s;}
+    .nav-menu a.active, .nav-menu a:hover {color:#FFD700;}
 
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
+    /* Hero Section */
+    #hero {
+      display:flex; align-items:center; justify-content:center; min-height:60vh; padding:2rem;
+      background: linear-gradient(135deg, #6A1B9A, #AB47BC, #CE93D8);
+      position:relative; overflow:hidden; text-align:center; color:#fff;
+    }
+    .hero-content {z-index:2; display:flex; flex-direction:column; align-items:center;}
+    .avatar {width:150px; border-radius:50%; border:4px solid #fff; animation: float 4s ease-in-out infinite;}
+    @keyframes float {0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+    
+    /* Floating shapes */
+    .floating-shapes .shape {position:absolute; border-radius:50%; opacity:0.3;}
+    .circle {width:80px;height:80px;background:#BA68C8;top:20%;left:10%; animation:move1 6s infinite alternate;}
+    .triangle {width:60px;height:60px;background:#9C27B0;clip-path:polygon(50% 0%,0% 100%,100% 100%);top:40%;left:70%; animation:move2 5s infinite alternate;}
+    .blob {width:100px;height:100px;background:#8E24AA;border-radius:40% 60% 60% 40%; top:70%; left:30%; animation:move3 7s infinite alternate;}
+    @keyframes move1 {0%{transform:translateY(0);}100%{transform:translateY(20px);}}
+    @keyframes move2 {0%{transform:translateX(0);}100%{transform:translateX(-20px);}}
+    @keyframes move3 {0%{transform:translate(0,0);}100%{transform:translate(20px,-10px);}}
 
-        /* Featured Project */
-        .featured-project {
-            background: #f5f5f5;
-            margin: 2rem auto;
-            padding: 2rem;
-            border-radius: 20px;
-            max-width: 900px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .featured-project h2 {
-            margin-bottom: 0.5rem;
-        }
-        .project-tags span {
-            display: inline-block;
-            margin-right: 10px;
-            padding: 4px 10px;
-            background: #6A1B9A;
-            color: #fff;
-            border-radius: 15px;
-            font-size: 0.9rem;
-        }
-        .project-actions a {
-            display: inline-block;
-            margin-right: 10px;
-            margin-top: 1rem;
-        }
+    /* Projects Page */
+    .projects-page {padding:2rem; max-width:1000px; margin:0 auto;}
+    .tabs {display:flex; justify-content:center; gap:1rem; margin-bottom:2rem; flex-wrap:wrap;}
+    .tab-btn {padding:0.5rem 1.2rem; border-radius:25px; border:none; cursor:pointer; background:#6A1B9A; color:#fff; font-weight:600; transition:0.3s;}
+    .tab-btn.active {background:#FFD700; color:#6A1B9A;}
+    
+    .tab-content {display:none; padding:1rem 0;}
+    .tab-content.active {display:block;}
+    
+    .project-card {background:#fff; padding:1.5rem; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.1); margin-bottom:1.5rem; transition:transform 0.3s;}
+    .project-card:hover {transform:translateY(-5px);}
+    .project-card.featured {border:3px solid #FFD700;}
+    .project-actions a {margin-right:10px; padding:0.5rem 1rem; border-radius:25px; background:#FFD700; color:#6A1B9A; font-weight:600; transition:0.3s;}
+    .project-actions a.outline-btn {background:#fff; border:2px solid #6A1B9A; color:#6A1B9A;}
+    .project-actions a:hover {transform:scale(1.05); background:#FFB300;}
 
-        /* Projects Grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem auto;
-            max-width: 1100px;
-        }
-        .project-card {
-            background: #fff;
-            padding: 1.5rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-        .project-card .status {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 3px 8px;
-            font-size: 0.85rem;
-            background: #FFD700;
-            color: #6A1B9A;
-            border-radius: 12px;
-            font-weight: 600;
-        }
-        .project-card.placeholder {
-            text-align: center;
-            color: #888;
-        }
-    </style>
+    .projects-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem; margin-top:1rem;}
+    .status {display:inline-block; margin-top:0.5rem; font-size:0.9rem; color:#555; font-weight:600;}
+
+    footer {padding:1rem; text-align:center; color:#fff; background:#6A1B9A; margin-top:2rem;}
+  </style>
 </head>
 <body>
 
-    <!-- Header / Navigation -->
-    <header id="main-header">
-        <nav id="nav-menu" class="nav-menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="experience.html">Experience</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="projects.html" class="active">Projects</a></li>
-                <li><a href="ai-automation.html">AI Fun</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Header / Navigation -->
+  <header id="main-header">
+    <nav id="nav-menu" class="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="ai-automation.html">AI Fun</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Hero Section -->
-    <header id="hero">
-        <div class="hero-content">
-            <img src="avatar-cartoon.jpeg" class="avatar">
-
-            <div class="hero-text">
-                <h1>💻 Software Projects</h1>
-                <p style="margin-top:1rem;">
-                    Showcasing my coding journey, from graduation project to upcoming software ideas.
-                </p>
-            </div>
-        </div>
-
-        <!-- Floating shapes -->
-        <div class="floating-shapes">
-            <div class="shape circle"></div>
-            <div class="shape triangle"></div>
-            <div class="shape blob"></div>
-        </div>
-    </header>
-
-    <!-- Intro Section -->
-    <section class="projects-intro">
-        <h2>Where code meets creativity 🎨💻</h2>
-        <p>Explore my journey from graduation projects to innovative experiments.</p>
-        <a href="#featured-project" class="cta-btn">Let's Explore</a>
-    </section>
-
-    <!-- Software Projects Section -->
-    <section class="projects-section">
-
-        <h1 id="featured-project" class="section-title">🎓 Featured Project</h1>
-        <p class="section-subtitle">
-            My graduation project – end-to-end solution with demo, documentation, and code.
+  <!-- Hero Section -->
+  <header id="hero">
+    <div class="hero-content">
+      <img src="avatar-cartoon.jpeg" class="avatar">
+      <div class="hero-text">
+        <h1>💻 Software Projects</h1>
+        <p style="margin-top:1rem;">
+          Showcasing my coding journey, from graduation project to upcoming software ideas.
         </p>
+      </div>
+    </div>
 
-        <!-- Featured Project -->
-        <div class="featured-project">
-            <div class="featured-content">
-                <h2>Smart Mental Health System</h2>
-                <p class="project-desc">
-                   Sherophobia isn’t just a graduation project; it’s a valuable tool for everyone to prioritize their mental health.
-                    By connecting individuals with similar experiences, it fosters a supportive community. It also provides practical resources,
-                    such as finding therapists, doctors, and pharmacies, as well as booking appointments online or in person. Even healthcare providers 
-                    can benefit by using Sherophobia to manage their schedules and better serve their patients. Additionally, the platform offers a 24/7 chat feature
-                    for immediate support and connection.
-                    <br><strong>Note:</strong> You can try it using patient account Email: dalia1@gmail.com / Pass: dalia123
-                </p>
+    <!-- Floating shapes -->
+    <div class="floating-shapes">
+      <div class="shape circle"></div>
+      <div class="shape triangle"></div>
+      <div class="shape blob"></div>
+    </div>
+  </header>
 
-                <div class="project-tags">
-                    <span>Software Engineering</span>
-                    <span>Automation</span>
-                    <span>End-to-End Project</span>
-                </div>
+  <!-- Projects Page -->
+  <section class="projects-page">
 
-                <div class="project-actions">
-                    <a href="SheroPhopia Demo.mp4" class="cta-btn">▶ Watch Demo</a>
-                    <a href="https://github.com/DaliaGamal11/Sherophobia/tree/main?tab=readme-ov-file" class="outline-btn">📁 GitHub</a>
-                </div>
-            </div>
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="featured">Featured</button>
+      <button class="tab-btn" data-tab="automation">Automation</button>
+      <button class="tab-btn" data-tab="other">Other Projects</button>
+    </div>
+
+    <!-- Tab Contents -->
+    <div class="tab-content active" id="featured">
+      <div class="project-card featured">
+        <h2>Smart Mental Health System 🤖</h2>
+        <p>Chatbot project to help users manage mental health, find therapists, book appointments and more. <br>
+        Note: You can try with patient account Email: dalia1@gmail.com, pass: dalia123
+        </p>
+        <div class="project-actions">
+          <a href="SheroPhopia Demo.mp4">▶ Watch Demo</a>
+          <a href="https://github.com/DaliaGamal11/Sherophobia" class="outline-btn">📁 GitHub</a>
         </div>
+      </div>
+    </div>
 
-        <!-- Other Software Projects -->
-        <h2 class="sub-section-title">Other Software Projects</h2>
-
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>🚀 Task Automation Tool</h3>
-                <p>
-                    Automating repetitive tasks for productivity enhancement.
-                    Built with Python and UiPath.
-                </p>
-                <span class="status">In Progress</span>
-            </div>
-
-            <div class="project-card">
-                <h3>💡 Student Feedback Analyzer</h3>
-                <p>
-                    Analyzing student feedback to generate actionable insights.
-                    Using Excel, Power BI, and Python.
-                </p>
-                <span class="status">Planned</span>
-            </div>
-
-            <div class="project-card placeholder">
-                <h3>✨ More Coming Soon</h3>
-                <p>
-                    Future projects combining software solutions, automation, 
-                    and creative problem solving.
-                </p>
-            </div>
+    <div class="tab-content" id="automation">
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>🚀 Task Automation Tool</h3>
+          <p>Automating repetitive tasks for productivity enhancement. Built with Python and UiPath.</p>
+          <span class="status">In Progress</span>
         </div>
+        <div class="project-card">
+          <h3>💡 Student Feedback Analyzer</h3>
+          <p>Analyzing student feedback to generate actionable insights using Excel, Power BI, and Python.</p>
+          <span class="status">Planned</span>
+        </div>
+      </div>
+    </div>
 
-    </section>
+    <div class="tab-content" id="other">
+      <div class="projects-grid">
+        <div class="project-card placeholder">
+          <h3>✨ More Coming Soon</h3>
+          <p>Future projects combining software solutions, automation, and creative problem solving.</p>
+        </div>
+      </div>
+    </div>
 
-    <footer>
-        <p>&copy; 2026 Dalia Gamal</p>
-    </footer>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Dalia Gamal</p>
+  </footer>
+
+  <!-- JS for Tabs -->
+  <script>
+    const tabs = document.querySelectorAll('.tab-btn');
+    const contents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const target = tab.dataset.tab;
+        contents.forEach(c => c.classList.remove('active'));
+        document.getElementById(target).classList.add('active');
+      });
+    });
+  </script>
 
 </body>
 </html>
