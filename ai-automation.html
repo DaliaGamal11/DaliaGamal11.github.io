@@ -10,18 +10,36 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        #ai-video-section {
-            text-align: center;
-            padding: 40px 20px 60px;
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1000px;
+        }
+
+        .hero-text {
+            max-width: 320px;
         }
 
         .phone-frame {
-            width: 280px;
+            width: 200px;
             margin: 0 auto;
-            border-radius: 24px;
+            border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-            border: 6px solid #1a1a1a;
+            border: 5px solid #1a1a1a;
+            flex-shrink: 0;
         }
 
         .phone-frame video {
@@ -32,19 +50,22 @@
         }
 
         .video-caption {
-            margin-top: 16px;
+            margin-top: 10px;
             font-style: italic;
             opacity: 0.8;
+            font-size: 0.85rem;
+            text-align: center;
         }
 
         .ai-fun-btn {
             display: inline-block;
-            margin: 20px 8px 0;
-            padding: 10px 22px;
+            margin: 16px 6px 0;
+            padding: 9px 20px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
             font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
         }
 
         .ai-fun-btn.filled {
@@ -56,6 +77,16 @@
             background: transparent;
             border: 2px solid #7b2ff7;
             color: #7b2ff7;
+        }
+
+        @media (max-width: 600px) {
+            #hero {
+                min-height: auto;
+                padding: 90px 16px 30px;
+            }
+            .phone-frame {
+                width: 170px;
+            }
         }
     </style>
 </head>
@@ -74,7 +105,8 @@
             </ul>
         </nav>
     </header>
-    <!-- Hero Section -->
+
+    <!-- Hero Section with Video -->
     <header id="hero">
         <div class="hero-content">
             <img src="avatar-cartoon.png" alt="Dalia Avatar" class="avatar">
@@ -82,8 +114,20 @@
                 <h1>🎬 AI Fun</h1>
                 <p>
                     I asked an AI "CEO" to give me a reference.<br>
-                    He agreed. Enjoy (Scroll Down )
+                    He agreed. He's not real. Enjoy ✨
                 </p>
+                <a href="https://github.com/DaliaGamal11" target="_blank" class="ai-fun-btn filled">Explore GitHub</a>
+                <a href="index.html" class="ai-fun-btn outline">Back to Home</a>
+            </div>
+
+            <div>
+                <div class="phone-frame">
+                    <video controls playsinline poster="avatar-cartoon.png">
+                        <source src="Dalia Gamal_ AI Portfolio Intro_1080p.mp4" type="video/mp4">
+                        Your browser doesn't support video playback.
+                    </video>
+                </div>
+                <p class="video-caption">100% AI-generated CEO. Still a fan though.</p>
             </div>
         </div>
         <!-- Floating shapes -->
@@ -94,20 +138,7 @@
         </div>
     </header>
 
-    <!-- AI Video Section -->
-    <section id="ai-video-section">
-        <div class="phone-frame">
-            <video controls playsinline poster="avatar-cartoon.png">
-                <source src="Dalia Gamal_ AI Portfolio Intro_1080p.mp4" type="video/mp4">
-                Your browser doesn't support video playback.
-            </video>
-        </div>
-        <p class="video-caption">100% AI-generated. 0% real CEO. Still a fan of my work though.</p>
-        <a href="https://github.com/DaliaGamal11" target="_blank" class="ai-fun-btn filled">Explore GitHub</a>
-        <a href="index.html" class="ai-fun-btn outline">Back to Home</a>
-    </section>
-
-    <footer>
+    <footer style="text-align:center; padding: 10px;">
         <p>&copy; 2026 Dalia Gamal</p>
     </footer>
 </body>
