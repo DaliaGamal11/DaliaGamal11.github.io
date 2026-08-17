@@ -21,25 +21,35 @@
 
         .hero-content {
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
-            justify-content: center;
-            gap: 30px;
-            max-width: 1000px;
+            justify-content: space-between;
+            gap: 40px;
+            max-width: 1100px;
+            width: 100%;
         }
 
-        .hero-text {
-            max-width: 320px;
+        .hero-left {
+            flex: 1;
+            text-align: left;
+        }
+
+        .hero-left .avatar {
+            width: 90px;
+            margin-bottom: 12px;
+        }
+
+        .hero-right {
+            flex-shrink: 0;
+            text-align: center;
         }
 
         .phone-frame {
-            width: 200px;
+            width: 220px;
             margin: 0 auto;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
             border: 5px solid #1a1a1a;
-            flex-shrink: 0;
         }
 
         .phone-frame video {
@@ -54,12 +64,11 @@
             font-style: italic;
             opacity: 0.8;
             font-size: 0.85rem;
-            text-align: center;
         }
 
         .ai-fun-btn {
             display: inline-block;
-            margin: 16px 6px 0;
+            margin: 16px 8px 0 0;
             padding: 9px 20px;
             border-radius: 30px;
             text-decoration: none;
@@ -79,13 +88,20 @@
             color: #7b2ff7;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
             #hero {
                 min-height: auto;
                 padding: 90px 16px 30px;
             }
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-left {
+                text-align: center;
+            }
             .phone-frame {
-                width: 170px;
+                width: 180px;
             }
         }
     </style>
@@ -106,11 +122,11 @@
         </nav>
     </header>
 
-    <!-- Hero Section with Video -->
+    <!-- Hero Section: Left text, Right video -->
     <header id="hero">
         <div class="hero-content">
-            <img src="avatar-cartoon.png" alt="Dalia Avatar" class="avatar">
-            <div class="hero-text">
+            <div class="hero-left">
+                <img src="avatar-cartoon.png" alt="Dalia Avatar" class="avatar">
                 <h1>🎬 AI Fun</h1>
                 <p>
                     I asked an AI "CEO" to give me a reference.<br>
@@ -120,7 +136,7 @@
                 <a href="index.html" class="ai-fun-btn outline">Back to Home</a>
             </div>
 
-            <div>
+            <div class="hero-right">
                 <div class="phone-frame">
                     <video controls playsinline poster="avatar-cartoon.png">
                         <source src="Dalia Gamal_ AI Portfolio Intro_1080p.mp4" type="video/mp4">
@@ -129,12 +145,6 @@
                 </div>
                 <p class="video-caption">100% AI-generated CEO. Still a fan though.</p>
             </div>
-        </div>
-        <!-- Floating shapes -->
-        <div class="floating-shapes">
-            <div class="shape circle"></div>
-            <div class="shape triangle"></div>
-            <div class="shape blob"></div>
         </div>
     </header>
 
